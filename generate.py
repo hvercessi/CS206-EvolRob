@@ -5,17 +5,17 @@
 import pyrosim.pyrosim as pyrosim
 
 # Size values
-length = 1
-width = 1
-height = 1
+length = 1.0
+width = 1.0
+height = 1.0
 
 # Position Values
-x = 0
-y = 0
+x = 0.0
+y = 0.0
 z = 0.5
 
-x2 = 0.5
-y2 = 0
+x2 = 1.0
+y2 = 0.0
 z2 = 1.5
 
 
