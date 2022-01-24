@@ -12,7 +12,7 @@ height = 3
 # Position Values
 x = 0
 y = 0
-z = 3
+z = 4
 
 
 pyrosim.Start_SDF("box.sdf")
