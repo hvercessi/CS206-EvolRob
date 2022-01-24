@@ -16,7 +16,7 @@ z = 0.5
 
 x2 = 0
 y2 = 0.5
-z2 = 1
+z2 = 1.5
 
 
 pyrosim.Start_SDF("boxes.sdf")
