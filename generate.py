@@ -10,8 +10,8 @@ width = 1
 height = 1
 
 # Position Values
-x = 1
-y = 2
+x = 0
+y = 0
 z = 3
 
 
