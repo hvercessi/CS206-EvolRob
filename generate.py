@@ -6,12 +6,12 @@ import pyrosim.pyrosim as pyrosim
 
 # Size values
 length = 1
-width = 2
-height = 3
+width = 1
+height = 1
 
 # Position Values
-x = 0
-y = 0
+x = 1
+y = 2
 z = 3
 
 
