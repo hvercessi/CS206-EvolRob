@@ -4,21 +4,22 @@
 
 import pyrosim.pyrosim as pyrosim
 
-# Size values
-length = 1.0
-width = 1.0
-height = 1.0
-
-# Position Values
-x = -2.0
-y = -2.0
-z = 0.5
-
-x2 = 1.0
-y2 = 0.0
-z2 = 1.5
-
 def Create_World():
+  # Size values
+  length = 1.0
+  width = 1.0
+  height = 1.0
+
+  # Position Values
+  x = -2.0
+  y = -2.0
+  z = 0.5
+
+  x2 = 1.0
+  y2 = 0.0
+  z2 = 1.5
+
+
   pyrosim.Start_SDF("world.sdf")
 
   for h in range(5):
