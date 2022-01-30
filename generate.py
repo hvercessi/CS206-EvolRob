@@ -10,8 +10,8 @@ width = 1.0
 height = 1.0
 
 # Position Values
-x = -2.0
-y = -2.0
+x = 0.0
+y = 0.0
 z = 0.5
 
 def Create_World():
