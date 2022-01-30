@@ -10,8 +10,8 @@ width = 1.0
 height = 1.0
 
 # Position Values
-x = 1.0
-y = 1.0
+x = 1.5
+y = 1.5
 z = 0.5
 
 x2 = 1.0
@@ -38,7 +38,7 @@ for h in range(3):
     # Set position to next row over
     x+=1
     z = 0.5
-  x = 1.0
+  x = 1.5
   y+=1.0
 
 pyrosim.End()
