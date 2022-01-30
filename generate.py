@@ -31,6 +31,7 @@ def Create_Robot():
   pyrosim.Start_URDF("body.urdf")
   
   pyrosim.Send_Cube(name="Torso", pos=[x_body,y_body,z_body] , size=[length,width,height])
+  pyrosim.Send_Cube(name="Leg", pos=[x_body+1.0,y_body,z_body+1.0] , size=[length,width,height])
   
   pyrosim.End()
   
