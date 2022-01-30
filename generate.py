@@ -10,8 +10,8 @@ width = 1.0
 height = 1.0
 
 # Position Values
-x = -1.5
-y = -1.5
+x = 1.5
+y = 0.0
 z = 0.5
 
 x2 = 1.0
