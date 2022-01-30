@@ -10,15 +10,19 @@ width = 1.0
 height = 1.0
 
 # Position Values
-x = 0.0
-y = 0.0
-z = 0.5
+x_body = 0.0
+y_body = 0.0
+z_body = 0.5
+
+x_world = -3.0
+y_world = 3.0
+z_world = 0.5
 
 def Create_World():
 
   pyrosim.Start_SDF("world.sdf")
  
-  pyrosim.Send_Cube(name="Box", pos=[x,y,z] , size=[length,width,height])
+  pyrosim.Send_Cube(name="Box", pos=[x_world,y_world,z_world] , size=[length,width,height])
   
   pyrosim.End()
   
@@ -26,7 +30,7 @@ def Create_World():
 def Create_Robot():
   pyrosim.Start_URDF("body.urdf")
   
-  pyrosim.Send_Cube(name="Torso", pos=[x,y,z] , size=[length,width,height])
+  pyrosim.Send_Cube(name="Torso", pos=[x_body,y_body,z_body] , size=[length,width,height])
   
   pyrosim.End()
   
