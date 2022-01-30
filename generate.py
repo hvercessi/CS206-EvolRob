@@ -25,4 +25,7 @@ pyrosim.Start_SDF("boxes.sdf")
 for i in range(10):
   pyrosim.Send_Cube(name="Box", pos=[x,y,z] , size=[length,width,height])
   z+=1
+  length = length-(length*0.1)
+  width = width-(width*0.1)
+  height = height-(height*0.1)
 pyrosim.End()
