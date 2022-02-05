@@ -27,4 +27,4 @@ for i in range(1000):
 p.disconnect()
 print(backLegSensorValues)
 with open('data/BackLegSensorValues.npy', 'w') as f:
-    np.save(f, backLegSensorValues))
+    np.save(f, backLegSensorValues)
