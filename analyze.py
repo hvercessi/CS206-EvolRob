@@ -7,7 +7,5 @@ frontLegSensorValues = numpy.load("data/FrontLegSensorValues.npy", allow_pickle=
 #print(frontLegSensorValues)
 
 matplotlib.pyplot.plot(backLegSensorValues)
-matplotlib.pyplot.show()
-
 matplotlib.pyplot.plot(frontLegSensorValues)
 matplotlib.pyplot.show()
