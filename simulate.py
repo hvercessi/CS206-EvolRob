@@ -12,7 +12,7 @@ import numpy
 
 backLegAmplitude = numpy.pi/4.0
 backLegFrequency = 10
-backLegPhaseOffset = 0
+backLegPhaseOffset = numpy.pi/4.0
 
 frontLegAmplitude = numpy.pi/4.0
 frontLegFrequency = 10
@@ -31,11 +31,12 @@ frontLegSensorValues = numpy.zeros(1000)
 
 targetAnglesBackLeg = backLegAmplitude*numpy.sin(backLegFrequency*numpy.linspace(0, 2*(numpy.pi), 1000) + backLegPhaseOffset)
 targetAnglesFrontLeg = frontLegAmplitude*numpy.sin(frontLegFrequency*numpy.linspace(0, 2*(numpy.pi), 1000) + frontLegPhaseOffset)
-#targetAngles = ((targetAngles+1)/2)*((numpy.pi)/4.0 - (-(numpy.pi)/4.0)) + (-(numpy.pi)/4.0)
-#targetAngles = amplitude * numpy.sin(frequency * targetAngles + phaseOffset)
-# with open('data/Position_Values.npy', 'wb') as f3:
-#   numpy.save(f3, targetAngles)
-# exit()
+
+with open('data/Position_Values_Back.npy', 'wb') as f3:
+  numpy.save(f3, targetAnglesBackLeg)
+with open('data/Position_Values_Front.npy', 'wb') as f4:
+  numpy.save(f4, targetAnglesFrontLeg)
+exit()
 
 
 for i in range(1000):
