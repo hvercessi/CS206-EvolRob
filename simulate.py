@@ -36,7 +36,7 @@ with open('data/Position_Values_Back.npy', 'wb') as f3:
   numpy.save(f3, targetAnglesBackLeg)
 with open('data/Position_Values_Front.npy', 'wb') as f4:
   numpy.save(f4, targetAnglesFrontLeg)
-exit()
+#exit()
 
 
 for i in range(1000):
