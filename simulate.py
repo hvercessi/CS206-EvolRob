@@ -11,6 +11,10 @@ import pybullet_data
 import pyrosim.pyrosim as pyrosim
 import numpy
 
+amplitude = numpy.pi/4.0
+frequency = 1
+phaseOffset = 0
+
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-9.8)
@@ -24,8 +28,10 @@ frontLegSensorValues = numpy.zeros(1000)
 
 targetAngles = numpy.sin(numpy.linspace(0, 2*(numpy.pi), 1000))
 targetAngles = ((targetAngles+1)/2)*((math.pi)/4.0 - (-(math.pi)/4.0)) + (-(math.pi)/4.0)
-#with open('data/Position_Values.npy', 'wb') as f3:
-#  numpy.save(f3, targetAngles)
+targetAngles = amplitude * sin(frequency * targetAngles + phaseOffset)
+with open('data/Position_Values.npy', 'wb') as f3:
+  numpy.save(f3, targetAngles)
+exit()
 
 
 for i in range(1000):
