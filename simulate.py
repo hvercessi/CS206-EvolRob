@@ -23,7 +23,7 @@ backLegSensorValues = numpy.zeros(1000)
 frontLegSensorValues = numpy.zeros(1000)
 
 targetAngles = numpy.sin(numpy.linspace(0, 2*(numpy.pi), 1000))
-#targetAngles = targetAngles*((math.pi)/4.0 - (-(math.pi)/4.0)) + (-(math.pi)/4.0)
+targetAngles = ((targetAngles+1)/2)*((math.pi)/4.0 - (-(math.pi)/4.0)) + (-(math.pi)/4.0)
 with open('data/Position_Values.npy', 'wb') as f3:
   numpy.save(f3, targetAngles)
 p.disconnect()
