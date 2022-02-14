@@ -5,7 +5,6 @@
 
 import pybullet as p
 import time as t
-import math
 import random as rand
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
@@ -26,9 +25,9 @@ pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(1000)
 frontLegSensorValues = numpy.zeros(1000)
 
-targetAngles = numpy.sin(numpy.linspace(0, 2*(numpy.pi), 1000))
-targetAngles = ((targetAngles+1)/2)*((math.pi)/4.0 - (-(math.pi)/4.0)) + (-(math.pi)/4.0)
-targetAngles = amplitude * numpy.sin(frequency * targetAngles + phaseOffset)
+targetAngles = amplitude*numpy.sin(frequency*numpy.linspace(0, 2*(numpy.pi), 1000) + phaseOffset)
+#targetAngles = ((targetAngles+1)/2)*((numpy.pi)/4.0 - (-(numpy.pi)/4.0)) + (-(numpy.pi)/4.0)
+#targetAngles = amplitude * numpy.sin(frequency * targetAngles + phaseOffset)
 with open('data/Position_Values.npy', 'wb') as f3:
   numpy.save(f3, targetAngles)
 exit()
