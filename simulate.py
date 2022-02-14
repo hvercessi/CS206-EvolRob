@@ -28,9 +28,9 @@ frontLegSensorValues = numpy.zeros(1000)
 targetAngles = amplitude*numpy.sin(frequency*numpy.linspace(0, 2*(numpy.pi), 1000) + phaseOffset)
 #targetAngles = ((targetAngles+1)/2)*((numpy.pi)/4.0 - (-(numpy.pi)/4.0)) + (-(numpy.pi)/4.0)
 #targetAngles = amplitude * numpy.sin(frequency * targetAngles + phaseOffset)
-with open('data/Position_Values.npy', 'wb') as f3:
-  numpy.save(f3, targetAngles)
-exit()
+# with open('data/Position_Values.npy', 'wb') as f3:
+#   numpy.save(f3, targetAngles)
+# exit()
 
 
 for i in range(1000):
