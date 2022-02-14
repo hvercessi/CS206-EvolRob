@@ -24,21 +24,21 @@ frontLegSensorValues = numpy.zeros(1000)
 
 targetAngles = numpy.sin(numpy.linspace(0, 2*(numpy.pi), 1000))
 targetAngles = ((targetAngles+1)/2)*((math.pi)/4.0 - (-(math.pi)/4.0)) + (-(math.pi)/4.0)
-with open('data/Position_Values.npy', 'wb') as f3:
-  numpy.save(f3, targetAngles)
-p.disconnect()
+#with open('data/Position_Values.npy', 'wb') as f3:
+#  numpy.save(f3, targetAngles)
+
 
 for i in range(1000):
   p.stepSimulation()
   backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
   frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
-  targetPos1 = rand.random()
-  targetPos1 = targetPos1*((math.pi)/2.0 - (-(math.pi)/2.0)) + (-(math.pi)/2.0)
-  targetPos2 = rand.random()
-  targetPos2 = targetPos2*((math.pi)/2.0 - (-(math.pi)/2.0)) + (-(math.pi)/2.0)
+  #targetPos1 = rand.random()
+  #targetPos1 = targetPos1*((math.pi)/2.0 - (-(math.pi)/2.0)) + (-(math.pi)/2.0)
+  #targetPos2 = rand.random()
+  #targetPos2 = targetPos2*((math.pi)/2.0 - (-(math.pi)/2.0)) + (-(math.pi)/2.0)
   
-  pyrosim.Set_Motor_For_Joint(bodyIndex = robotId, jointName = "Torso_BackLeg", controlMode = p.POSITION_CONTROL, targetPosition = targetPos1, maxForce = 500)
-  pyrosim.Set_Motor_For_Joint(bodyIndex = robotId, jointName = "Torso_FrontLeg", controlMode = p.POSITION_CONTROL, targetPosition = targetPos2, maxForce = 500)
+  pyrosim.Set_Motor_For_Joint(bodyIndex = robotId, jointName = "Torso_BackLeg", controlMode = p.POSITION_CONTROL, targetPosition = targetAngles[i], maxForce = 500)
+  pyrosim.Set_Motor_For_Joint(bodyIndex = robotId, jointName = "Torso_FrontLeg", controlMode = p.POSITION_CONTROL, targetPosition = targetAngles[i], maxForce = 500)
   
   t.sleep(1/70)
 print(backLegSensorValues)
@@ -47,7 +47,5 @@ with open('data/BackLegSensorValues.npy', 'wb') as f1:
   numpy.save(f1, backLegSensorValues)
 with open('data/FrontLegSensorValues.npy', 'wb') as f2:
   numpy.save(f2, frontLegSensorValues)
-with open('data/Position_Values.npy', 'wb') as f3:
-  numpy.save(f3, targetAngles)
 p.disconnect()
 
