@@ -11,7 +11,7 @@ import pyrosim.pyrosim as pyrosim
 import numpy
 
 amplitude = numpy.pi/4.0
-frequency = 1
+frequency = 10
 phaseOffset = 0
 
 physicsClient = p.connect(p.GUI)
