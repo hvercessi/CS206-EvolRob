@@ -22,8 +22,7 @@ pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(1000)
 frontLegSensorValues = numpy.zeros(1000)
 
-position_seq_vect = numpy.linspace(0, 2*(numpy.pi), 1000)
-translated_pos_vals = numpy.sin(position_seq_vect)
+targetAngles = numpy.sin(numpy.linspace(0, 2*(numpy.pi), 1000))
 
 for i in range(1000):
   p.stepSimulation()
@@ -45,6 +44,6 @@ with open('data/BackLegSensorValues.npy', 'wb') as f1:
 with open('data/FrontLegSensorValues.npy', 'wb') as f2:
   numpy.save(f2, frontLegSensorValues)
 with open('data/Position_Values.npy', 'wb') as f3:
-  numpy.save(f3,  translated_pos_vals)
+  numpy.save(f3, targetAngles)
 p.disconnect()
 
