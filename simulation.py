@@ -20,7 +20,7 @@ class SIMULATION:
         self.robot = ROBOT()
         pyrosim.Prepare_To_Simulate((self.robot).robotId)
         (self.robot).Prepare_To_Sense()
-        (self).robot.Prepare_To_Act()
+        (self.robot).Prepare_To_Act()
 
 
         
@@ -30,15 +30,12 @@ class SIMULATION:
             (self.robot).Sense(i)
             (self.robot).Act(i)
             
-            
             t.sleep(c.sleepTime)
             
-    def Save_Values(self):
-        with open('data/SensorValues.npy', 'wb') as f:
-            vals = []
-            for name in self.sensors:
-                vals.append(self.robot.sensors[name].values)
-            numpy.save(f, vals)
     
     def __del__(self):
+        for s in self.robot.sensors:
+            self.robot.sensors[s].Save_Values()
+        for m in self.robot.motors:
+            self.robot.motors[m].Save_Values()
         p.disconnect()  

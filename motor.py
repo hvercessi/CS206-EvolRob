@@ -12,7 +12,11 @@ class MOTOR:
         
     def Prepare_To_Act(self):
         self.amplitude = (numpy.pi/4.0)
-        self.frequency = 10
+        if self.jointName == "Torso_BackLeg":
+            
+            self.frequency = 5
+        else:
+            self.frequency = 10
         self.offset = 0
         self.motorValues = []
         self.angleValues = self.amplitude*numpy.sin(\
@@ -26,4 +30,7 @@ class MOTOR:
                                                        controlMode = p.POSITION_CONTROL, \
                                                        targetPosition = self.angleValues[i], \
                                                        maxForce = 500) )
+    def Save_Values(self):
+        with open('data/MotorValues.npy', 'wb') as f:
+            numpy.save(f, self.motorValues)
        
