@@ -5,4 +5,5 @@ class ROBOT:
         self.sensors = {}
         self.motors = {}
         self.robotId = p.loadURDF("body.urdf")
+        print("ROBOT******************************************")
         

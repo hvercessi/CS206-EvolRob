@@ -19,7 +19,7 @@ class SIMULATION:
         self.world = WORLD()
         self.robot = ROBOT()
         pyrosim.Prepare_To_Simulate((self.robot).robotId)
-        
+
         self.backLegSensorValues = numpy.zeros(c.simRange)
         self.frontLegSensorValues = numpy.zeros(c.simRange)
 

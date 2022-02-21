@@ -5,9 +5,9 @@
 
 
 from simulation import SIMULATION
-
+import pybullet as p
 simulation = SIMULATION()
-simulation.Run
+simulation.Run()
 
 # physicsClient = p.connect(p.GUI)
 # p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -46,5 +46,5 @@ simulation.Run
 #   numpy.save(f1, backLegSensorValues)
 # with open('data/FrontLegSensorValues.npy', 'wb') as f2:
 #   numpy.save(f2, frontLegSensorValues)
-# p.disconnect()
+p.disconnect()
 
