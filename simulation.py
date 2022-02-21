@@ -32,6 +32,13 @@ class SIMULATION:
             
             
             t.sleep(c.sleepTime)
+            
+    def Save_Values(self):
+        with open('data/SensorValues.npy', 'wb') as f:
+            vals = []
+            for name in self.sensors:
+                vals.append(self.robot.sensors[name].values)
+            numpy.save(f, vals)
     
     def __del__(self):
         p.disconnect()  
