@@ -5,15 +5,9 @@
 
 
 from simulation import SIMULATION
-# import pybullet as p
-# import time as t
-# import random as rand
-# import pyrosim.pyrosim as pyrosim
-# import constants as c
-# import pybullet_data
-# import numpy
 
 simulation = SIMULATION()
+simulation.Run
 
 # physicsClient = p.connect(p.GUI)
 # p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -23,6 +17,7 @@ simulation = SIMULATION()
 # robotId = p.loadURDF("body.urdf")
 # p.loadSDF("world.sdf")
 # pyrosim.Prepare_To_Simulate(robotId)
+
 # backLegSensorValues = numpy.zeros(c.simRange)
 # frontLegSensorValues = numpy.zeros(c.simRange)
 
