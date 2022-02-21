@@ -9,6 +9,7 @@ frontLegAmplitude = -(numpy.pi/4.0)
 frontLegFrequency = 10
 frontLegPhaseOffset = (numpy.pi/4.0)
 
+
 simRange = 1000
 sleepTime = 1/70
 
