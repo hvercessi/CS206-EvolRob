@@ -37,4 +37,6 @@ class SIMULATION:
             pyrosim.Set_Motor_For_Joint(bodyIndex = (self.robot).robotId, jointName = "Torso_FrontLeg", controlMode = p.POSITION_CONTROL, targetPosition = self.targetAnglesFrontLeg[i], maxForce = 500)
             print(i)
             t.sleep(c.sleepTime)
-          
+    
+    def __del__(self):
+        p.disconnect()  

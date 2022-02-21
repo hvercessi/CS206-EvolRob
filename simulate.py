@@ -46,5 +46,5 @@ simulation.Run()
 #   numpy.save(f1, backLegSensorValues)
 # with open('data/FrontLegSensorValues.npy', 'wb') as f2:
 #   numpy.save(f2, frontLegSensorValues)
-p.disconnect()
+
 
