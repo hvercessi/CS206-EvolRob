@@ -21,13 +21,14 @@ class SIMULATION:
         pyrosim.Prepare_To_Simulate((self.robot).robotId)
         (self.robot).Prepare_To_Sense()
         (self.robot).Prepare_To_Act()
-
-
         
     def Run(self):
         for i in range(c.simRange):
             p.stepSimulation()
             (self.robot).Sense(i)
+            
+            self.robot.Think()
+            
             (self.robot).Act(i)
             
             t.sleep(c.sleepTime)
