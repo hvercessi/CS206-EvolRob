@@ -1,6 +1,8 @@
 
 import numpy
 
+initialNeuronValue = numpy.pi/4.0
+
 backLegAmplitude = (numpy.pi/4.0)
 backLegFrequency = 10
 backLegPhaseOffset = 0

@@ -13,7 +13,6 @@ class MOTOR:
     def Prepare_To_Act(self):
         self.amplitude = (numpy.pi/4.0)
         if self.jointName == "Torso_BackLeg":
-            
             self.frequency = 5
         else:
             self.frequency = 10
@@ -23,12 +22,12 @@ class MOTOR:
                                    self.frequency*numpy.linspace(\
                                    c.xValsMin, c.xValsMax, c.simRange) + self.offset)
         
-    def Set_Value(self, robot, i):
+    def Set_Value(self, robot, desiredAngle):
         self.motorValues.append( \
                            pyrosim.Set_Motor_For_Joint(bodyIndex = robot.robotId, \
                                                        jointName = self.jointName, \
                                                        controlMode = p.POSITION_CONTROL, \
-                                                       targetPosition = self.angleValues[i], \
+                                                       targetPosition = desiredAngle, \
                                                        maxForce = 500) )
     def Save_Values(self):
         with open('data/MotorValues.npy', 'wb') as f:
