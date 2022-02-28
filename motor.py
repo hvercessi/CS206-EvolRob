@@ -10,17 +10,17 @@ class MOTOR:
         self.jointName = name
         self.Prepare_To_Act()
         
-    def Prepare_To_Act(self):
-        self.amplitude = (numpy.pi/4.0)
-        if self.jointName == "Torso_BackLeg":
-            self.frequency = 5
-        else:
-            self.frequency = 10
-        self.offset = 0
-        self.motorValues = []
-        self.angleValues = self.amplitude*numpy.sin(\
-                                   self.frequency*numpy.linspace(\
-                                   c.xValsMin, c.xValsMax, c.simRange) + self.offset)
+    # def Prepare_To_Act(self):
+    #     self.amplitude = (numpy.pi/4.0)
+    #     if self.jointName == "Torso_BackLeg":
+    #         self.frequency = 5
+    #     else:
+    #         self.frequency = 10
+    #     self.offset = 0
+    #     self.motorValues = []
+    #     self.angleValues = self.amplitude*numpy.sin(\
+    #                                self.frequency*numpy.linspace(\
+    #                                c.xValsMin, c.xValsMax, c.simRange) + self.offset)
         
     def Set_Value(self, robot, desiredAngle):
         self.motorValues.append( \
@@ -29,7 +29,7 @@ class MOTOR:
                                                        controlMode = p.POSITION_CONTROL, \
                                                        targetPosition = desiredAngle, \
                                                        maxForce = 500) )
-    def Save_Values(self):
-        with open('data/MotorValues.npy', 'wb') as f:
-            numpy.save(f, self.motorValues)
+    # def Save_Values(self):
+    #     with open('data/MotorValues.npy', 'wb') as f:
+    #         numpy.save(f, self.motorValues)
        
