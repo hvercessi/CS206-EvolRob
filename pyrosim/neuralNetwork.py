@@ -35,7 +35,7 @@ class NEURAL_NETWORK:
             else:
                 self.neurons[neuronName].Update_Hidden_Or_Motor_Neuron(self.neurons, self.synapses)
                 
-        exit()
+        #exit()
                 
     def Get_Neuron_Names(self):
         return self.neurons.keys()
@@ -55,6 +55,7 @@ class NEURAL_NETWORK:
         for key in self.neurons:
             if key == neuronName:
                 return self.neurons[key].Get_Value()
+            
 
 # ---------------- Private methods --------------------------------------
 
