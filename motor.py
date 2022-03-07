@@ -8,7 +8,8 @@ class MOTOR:
     def __init__(self, name):
         
         self.jointName = name
-        self.Prepare_To_Act()
+        self.motorValues = []
+        #self.Prepare_To_Act()
         
     # def Prepare_To_Act(self):
     #     self.amplitude = (numpy.pi/4.0)
