@@ -3,6 +3,7 @@
 # Specifies what is in the world
 
 import pyrosim.pyrosim as pyrosim
+import random as rand
 
 # Size values
 length = 1.0
@@ -41,6 +42,7 @@ def Generate_Body():
   
 def Generate_Brain():
   pyrosim.Start_NeuralNetwork("brain.nndf")
+
   
   pyrosim.Send_Sensor_Neuron(name = 0 , linkName = "Torso")
   pyrosim.Send_Sensor_Neuron(name = 1 , linkName = "BackLeg")
@@ -49,19 +51,20 @@ def Generate_Brain():
   pyrosim.Send_Motor_Neuron(name = 3 , jointName = "Torso_BackLeg")
   pyrosim.Send_Motor_Neuron(name = 4 , jointName = "Torso_FrontLeg")
   
-  # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 3 , weight = 1.0 )
-  # pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = 1.0 )
-  # pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 3 , weight = 1.0 )
-  
-  pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 3 , weight = -1.0 )
-  pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 4 , weight = -1.0 )
-  pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = -1.0 )
-  pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 4 , weight = -1.0 )
+  # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 3 , weight = -1.0 )
+  # pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 4 , weight = -1.0 )
+  # pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = -1.0 )
+  # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 4 , weight = -1.0 )
 
-  
-  
+  for i in range(3):
+      for j in range(3, 5):
+          w = rand.uniform(-1,1)
+          pyrosim.Send_Synapse(sourceNeuronName = i, targetNeuronName = j, weight = w)
+          
   pyrosim.End()
 
+          
+  
   
 Create_World()
 Generate_Body()

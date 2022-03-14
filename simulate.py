@@ -8,4 +8,4 @@ from simulation import SIMULATION
 import pybullet as p
 simulation = SIMULATION()
 simulation.Run()
-
+#simulation.__del__
