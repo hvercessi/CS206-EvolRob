@@ -6,7 +6,10 @@
 
 from simulation import SIMULATION
 import pybullet as p
-simulation = SIMULATION()
+import sys
+
+directOrGUI = sys.argv[1]
+
+simulation = SIMULATION(directOrGUI)
 simulation.Run()
 simulation.Get_Fitness()
-#simulation.__del__

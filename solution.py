@@ -10,9 +10,9 @@ class SOLUTION:
     def __init__(self):
         self.weights = np.random.rand(3,2)
         
-        print(self.weights)
+        #print(self.weights)
         self.weights = self.weights*2 - 1
-        print(self.weights)
+        #print(self.weights)
 
     
     def Create_World(self):
@@ -60,10 +60,20 @@ class SOLUTION:
               
       pyrosim.End()
       
-    def Evaluate(self):
+    def Mutate(self):
+        randomRow = rand.randint(0, 2)
+        randomColumn = rand.randint(0, 1)
+
+        self.weights[randomRow, randomColumn] = rand.random() * 2 - 1
+        
+      
+    def Evaluate(self, directOrGUI):
       self.Create_World()
       self.Generate_Body()
       self.Generate_Brain()
-      subprocess.call("python simulate.py")
+      subprocess.call("python simulate.py "+directOrGUI)
+      
+      with open("fitness.txt") as fitnessFile:
+          self.fitness = float(fitnessFile.readline())
       
       

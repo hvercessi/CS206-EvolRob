@@ -48,10 +48,12 @@ class ROBOT:
         
         positionOfLinkZero = stateOfLinkZero[0]
         xCoordinateOfLinkZero = positionOfLinkZero[0]
-        print(xCoordinateOfLinkZero)
+        #print(xCoordinateOfLinkZero)
         
         with open('fitness.txt', 'w') as f:
+            #print("writing to file")
             f.write(str(xCoordinateOfLinkZero))
+            #print("done writing to file")
         
         
         
