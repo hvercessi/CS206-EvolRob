@@ -12,8 +12,22 @@ frontLegFrequency = 10
 frontLegPhaseOffset = (numpy.pi/4.0)
 
 
-simRange = 400
+simRange = 700
 sleepTime = 1/100
 
 xValsMin = 0
 xValsMax = 2*(numpy.pi)
+
+# Size values
+length = 1.0
+width = 1.0
+height = 1.0
+
+# Position Values
+x_body = 0.0
+y_body = 0.0
+z_body = 0.5
+
+x_world = -3.0
+y_world = 3.0
+z_world = 0.5

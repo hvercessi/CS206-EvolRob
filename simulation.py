@@ -33,6 +33,9 @@ class SIMULATION:
             
             t.sleep(c.sleepTime)
             
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
+            
     
     def __del__(self):
         for s in self.robot.sensors:
