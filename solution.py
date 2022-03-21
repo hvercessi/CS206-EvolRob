@@ -87,18 +87,43 @@ class SOLUTION:
         self.weights[randomRow, randomColumn] = rand.random() * 2 - 1
         
       
+    def Start_Simulation(self, directOrGUI):
+        self.Create_World()
+        self.Generate_Body()
+        self.Generate_Brain()
+        
+        os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID) )
+    
+    def Wait_For_Simulation_To_End(self):
+        fitnessFileName = fitnessFileName = "fitness" + str(self.myID) + ".txt"
+        
+        while not os.path.exists(fitnessFileName):
+          time.sleep(0.01)
+          
+        with open(fitnessFileName) as fitnessFile:
+            self.fitness = float(fitnessFile.readline())
+            print("\n****************************\n")
+            print("Fitness " + str(self.myID) + ": " + str(self.fitness))
+            print("\n****************************\n")
+      
+        os.system("del " + fitnessFileName)
+        
     def Evaluate(self, directOrGUI):
       self.Create_World()
       self.Generate_Body()
       self.Generate_Brain()
-      fitnessFileName = "fitness.txt"
+      fitnessFileName = fitnessFileName = "fitness" + str(self.myID) + ".txt"
       
       #subprocess.call("python simulate.py " + directOrGUI + " &")
       #os.system("python generate.py")
       os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID) )
-      
+      while not os.path.exists(fitnessFileName):
+          time.sleep(0.01)
           
       with open(fitnessFileName) as fitnessFile:
           self.fitness = float(fitnessFile.readline())
+          print("\n****************************\n")
+          print("Fitness " + str(self.myID) + ": " + str(self.fitness))
+          print("\n****************************\n")
       
       

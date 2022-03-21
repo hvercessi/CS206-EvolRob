@@ -61,6 +61,6 @@ class PARALLEL_HILL_CLIMBER:
         #     self.Evolve_For_One_Generation()
         
         for key in self.parents:
-            (self.parents[key]).Evaluate("GUI")
+            (self.parents[key]).Start_Simulation("GUI")
     
 
