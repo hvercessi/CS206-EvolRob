@@ -13,7 +13,7 @@ frontLegPhaseOffset = (numpy.pi/4.0)
 
 
 simRange = 700
-sleepTime = 1/200
+sleepTime = 0.01
 
 xValsMin = 0
 xValsMax = 2*(numpy.pi)

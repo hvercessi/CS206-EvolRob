@@ -4,6 +4,8 @@ import constants as c
 import random as rand
 import numpy as np
 import subprocess
+import os
+import time
 
 class SOLUTION:
     
@@ -71,9 +73,14 @@ class SOLUTION:
       self.Create_World()
       self.Generate_Body()
       self.Generate_Brain()
-      subprocess.call("python simulate.py "+directOrGUI)
+      fitnessFileName = "fitness.txt"
+      #subprocess.call("python simulate.py " + directOrGUI + " &")
+      os.system("python simulate.py " + directOrGUI + " &")
       
-      with open("fitness.txt") as fitnessFile:
+      while not os.path.exists(fitnessFileName):
+          time.sleep(0.01)
+          
+      with open(fitnessFileName) as fitnessFile:
           self.fitness = float(fitnessFile.readline())
       
       
