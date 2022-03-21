@@ -33,3 +33,4 @@ y_world = 3.0
 z_world = 0.5
 
 numberOfGenerations = 10
+populationSize = 2

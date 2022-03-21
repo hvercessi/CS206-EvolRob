@@ -6,8 +6,8 @@ import subprocess
 from parallelHillClimber import PARALLEL_HILL_CLIMBER
 import os
 
-subprocess.call("python generate.py")
-subprocess.call("python simulate.py GUI")
+#subprocess.call("python generate.py")
+#subprocess.call("python simulate.py GUI")
 
 # hc = HILLCLIMBER()
 # hc.Evolve()
