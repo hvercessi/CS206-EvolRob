@@ -95,7 +95,7 @@ class SOLUTION:
       
       #subprocess.call("python simulate.py " + directOrGUI + " &")
       #os.system("python generate.py")
-      os.system("start /B python simulate.py " + directOrGUI )
+      os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID) )
       
           
       with open(fitnessFileName) as fitnessFile:
