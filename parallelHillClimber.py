@@ -30,53 +30,74 @@ class PARALLEL_HILL_CLIMBER:
         
             self.children[key].Set_ID(self.nextAvailableID)
         
-            self.nextAvailableID = self.nextAvailableID +1
+            self.nextAvailableID = self.nextAvailableID + 1
 
 
     def Mutate(self):
-        self.child.Mutate()
+        for key in self.children:
+            self.children[key].Mutate()
 
 
     def Select(self):
-        if (self.parent.fitness > self.child.fitness):
-            self.parent = self.child
+        for key in self.parents:
+            if (self.parents[key].fitness > self.children[key].fitness):
+                self.parents[key] = self.children[key]
             
     def Print(self):
-        print("\n*********************************************\n")
-        print("Parent fitness:", self.parent.fitness, "Child fitness:", self.child.fitness)
-        print("\n*********************************************\n")
+        for key in self.parents:
+            print("\n*********************************************\n")
+            print("Parent fitness:", self.parents[key].fitness, "Child fitness:", self.children[key].fitness)
+            print("\n*********************************************\n")
         
     def Show_Best(self):
-        #self.parent.Evaluate("GUI")
+        best = 100000000.0
+        keyBest = 0
+        for key in self.parents:
+            if self.parents[key].fitness < best:
+                keyBest = key
+                best = self.parents[key].fitness
+        print("\n             Best Fitness: "+ str(best))
+        self.parents[keyBest].Start_Simulation("GUI")
         
-        pass
+    
+    def Evaluate(self, solutions):
+        for key in solutions:
+            (solutions[key]).Start_Simulation("DIRECT")
+            
+        for key in solutions:
+            (solutions[key]).Wait_For_Simulation_To_End()
     
     def Evolve_For_One_Generation(self):
         self.Spawn()
 
-        # self.Mutate()
+        self.Mutate()
 
-        # self.child.Evaluate("DIRECT")
+        self.Evaluate(self.children)
         
-        # self.Print()
+        self.Print()
 
-        # self.Select()
+        self.Select()
         
         
         
     def Evolve(self):
-        # self.parent.Evaluate("DIRECT")
-        
+
         # for currentGeneration in range(c.numberOfGenerations):
         #     self.Evolve_For_One_Generation()
         
-        for key in self.parents:
-            (self.parents[key]).Start_Simulation("DIRECT")
+        # for key in self.parents:
+        #     (self.parents[key]).Start_Simulation("DIRECT")
             
-        for key in self.parents:
-            (self.parents[key]).Wait_For_Simulation_To_End()
+        # for key in self.parents:
+        #     (self.parents[key]).Wait_For_Simulation_To_End()
             
+        self.Evaluate(self.parents)
+        
         for currentGeneration in range(c.numberOfGenerations):
-             self.Evolve_For_One_Generation()
+            print("\n        Generation: " + str(currentGeneration)+"\n")
+            self.Evolve_For_One_Generation()
+             
+        
+
     
 

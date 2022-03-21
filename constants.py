@@ -12,7 +12,7 @@ frontLegFrequency = 10
 frontLegPhaseOffset = (numpy.pi/4.0)
 
 
-simRange = 700
+simRange = 800
 sleepTime = 0.01
 
 xValsMin = 0
@@ -33,4 +33,4 @@ y_world = 3.0
 z_world = 0.5
 
 numberOfGenerations = 10
-populationSize = 2
+populationSize = 10
