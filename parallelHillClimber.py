@@ -62,5 +62,8 @@ class PARALLEL_HILL_CLIMBER:
         
         for key in self.parents:
             (self.parents[key]).Start_Simulation("GUI")
+            
+        for key in self.parents:
+            (self.parents[key]).Wait_For_Simulation_To_End()
     
 
