@@ -25,8 +25,10 @@ class SIMULATION:
     def __init__(self, directOrGUI):
         
         if directOrGUI == "DIRECT":
+            self.directOrGUI = "DIRECT"
             self.physicsClient = p.connect(p.DIRECT)
         elif directOrGUI == "GUI":
+            self.directOrGUI = "GUI"
             self.physicsClient = p.connect(p.GUI)
         
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -46,7 +48,8 @@ class SIMULATION:
             
             (self.robot).Act(i)
             
-            t.sleep(c.sleepTime)
+            if self.directOrGUI == "GUI":
+                t.sleep(c.sleepTime)
             
     def Get_Fitness(self):
         self.robot.Get_Fitness()
