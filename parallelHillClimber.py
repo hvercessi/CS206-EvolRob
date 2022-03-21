@@ -4,12 +4,15 @@ from solution import SOLUTION
 import numpy as np
 import constants as c
 import copy 
-
+import os
 
 class PARALLEL_HILL_CLIMBER:
     
     def __init__(self):
-        # self.parent = SOLUTION()
+        
+        os.system("del brain*.nndf")
+        os.system("del fitness*.nndf")
+        
         self.nextAvailableID = 0
         
         self.parents = {}
@@ -46,13 +49,15 @@ class PARALLEL_HILL_CLIMBER:
     def Evolve_For_One_Generation(self):
         self.Spawn()
 
-        self.Mutate()
+        # self.Mutate()
 
-        self.child.Evaluate("DIRECT")
+        # self.child.Evaluate("DIRECT")
         
-        self.Print()
+        # self.Print()
 
-        self.Select()
+        # self.Select()
+        
+        
         
     def Evolve(self):
         # self.parent.Evaluate("DIRECT")
@@ -61,9 +66,12 @@ class PARALLEL_HILL_CLIMBER:
         #     self.Evolve_For_One_Generation()
         
         for key in self.parents:
-            (self.parents[key]).Start_Simulation("GUI")
+            (self.parents[key]).Start_Simulation("DIRECT")
             
         for key in self.parents:
             (self.parents[key]).Wait_For_Simulation_To_End()
+            
+        for currentGeneration in range(c.numberOfGenerations):
+             self.Evolve_For_One_Generation()
     
 

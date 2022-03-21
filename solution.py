@@ -103,9 +103,9 @@ class SOLUTION:
         with open(fitnessFileName) as fitnessFile:
             self.fitness = float(fitnessFile.readline())
         
-        print("\n****************************\n")
-        print("Fitness " + str(self.myID) + ": " + str(self.fitness))
-        print("\n****************************\n")
+        # print("\n****************************\n")
+        # print("Fitness " + str(self.myID) + ": " + str(self.fitness))
+        # print("\n****************************\n")
             
         os.system("del " + fitnessFileName)
         
