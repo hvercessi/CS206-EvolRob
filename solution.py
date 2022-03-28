@@ -10,15 +10,15 @@ import time
 class SOLUTION:
     
     def __init__(self):
-        self.weights = np.random.rand(3,2)
+        self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
         
         #print(self.weights)
         self.weights = self.weights*2 - 1
         #print(self.weights)
     
     def __init__(self, iD):
-        self.weights = np.random.rand(3,2)
-    
+        self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
+        
         self.weights = self.weights*2 - 1
         
         self.myID = iD
@@ -69,9 +69,8 @@ class SOLUTION:
       # pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = -1.0 )
       # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 4 , weight = -1.0 )
 
-      for currentRow in [0,1,2]:
-          for currentColumn in [0,1]:
-              #w = rand.uniform(-1,1)
+      for currentRow in range(c.numSensorNeurons):
+          for currentColumn in range(c.numMotorNeurons):
               pyrosim.Send_Synapse(sourceNeuronName = currentRow, targetNeuronName = currentColumn+3, \
                                    weight = self.weights[currentRow][currentColumn])
               
@@ -81,8 +80,8 @@ class SOLUTION:
       pyrosim.End()
       
     def Mutate(self):
-        randomRow = rand.randint(0, 2)
-        randomColumn = rand.randint(0, 1)
+        randomRow = rand.randint(0, c.numSensorNeurons-1)
+        randomColumn = rand.randint(0, c.numMotorNeurons-1)
 
         self.weights[randomRow, randomColumn] = rand.random() * 2 - 1
         

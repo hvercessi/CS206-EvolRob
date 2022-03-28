@@ -1,6 +1,9 @@
 
 import numpy
 
+numSensorNeurons = 3
+numMotorNeurons = 2
+
 initialNeuronValue = numpy.pi/4.0
 
 backLegAmplitude = (numpy.pi/4.0)
