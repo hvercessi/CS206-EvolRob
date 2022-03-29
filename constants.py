@@ -1,10 +1,8 @@
 
 import numpy
 
-numSensorNeurons = 4
-numMotorNeurons = 3
-
-jointAxis = "1 0 0"
+numSensorNeurons = 7
+numMotorNeurons = 6
 
 initialNeuronValue = numpy.pi/4.0
 
