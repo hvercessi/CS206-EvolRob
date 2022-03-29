@@ -6,6 +6,7 @@ import numpy as np
 import subprocess
 import os
 import time
+import constants as c
 
 class SOLUTION:
     
@@ -38,19 +39,23 @@ class SOLUTION:
       pyrosim.End()
 
     def Generate_Body(self):
+    
       pyrosim.Start_URDF("body.urdf")
       
-      pyrosim.Send_Cube(name="Torso", pos=[1.5,0.0,1.5] , size=[c.length,c.width,c.height])
+      pyrosim.Send_Cube(name="Torso", pos=[0.0,0.0,1.0] , size=[c.length,c.width,c.height])
       
-      pyrosim.Send_Joint( name = "Torso_BackLeg" , parent= "Torso", child = "BackLeg", type = "revolute", position = [1.0,0.0,1.0])
-      pyrosim.Send_Cube(name="BackLeg", pos=[-0.5,0.0,-0.5] , size=[c.length,c.width,c.height])
+      pyrosim.Send_Joint( name = "Torso_BackLeg" , parent= "Torso", child = "BackLeg", type = "revolute", position = [0.0,-0.5,1.0], jointAxis = c.jointAxis)
+      pyrosim.Send_Cube(name="BackLeg", pos=[0.0,-0.5,0.0] , size=[0.2,1,0.2])
       
-      pyrosim.Send_Joint( name = "Torso_FrontLeg" , parent= "Torso" , child = "FrontLeg" , type = "revolute", position = [2.0,0.0,1.0])
-      pyrosim.Send_Cube(name="FrontLeg", pos=[0.5,0.0,-0.5] , size=[c.length,c.width,c.height])
+      pyrosim.Send_Joint( name = "Torso_FrontLeg" , parent= "Torso" , child = "FrontLeg" , type = "revolute", position = [0.0,0.5,1.0], jointAxis = c.jointAxis)
+      pyrosim.Send_Cube(name="FrontLeg", pos=[0.0,0.5,0.0] , size=[0.2,1,0.2])
+      
+      pyrosim.Send_Joint( name = "Torso_LeftLeg" , parent= "Torso" , child = "LeftLeg" , type = "revolute", position = [-0.5,0.0,1.0], jointAxis = c.jointAxis)
+      pyrosim.Send_Cube(name="LeftLeg", pos=[-0.5,0.0,0.0] , size=[1.0,0.2,0.2])
       
       # while not os.path.exists("body.urdf"):
       #     time.sleep(0.01)
-          
+         
       pyrosim.End()
       
     def Generate_Brain(self):
@@ -64,16 +69,11 @@ class SOLUTION:
       pyrosim.Send_Motor_Neuron(name = 3 , jointName = "Torso_BackLeg")
       pyrosim.Send_Motor_Neuron(name = 4 , jointName = "Torso_FrontLeg")
       
-      # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 3 , weight = -1.0 )
-      # pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 4 , weight = -1.0 )
-      # pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = -1.0 )
-      # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 4 , weight = -1.0 )
-
       for currentRow in range(c.numSensorNeurons):
           for currentColumn in range(c.numMotorNeurons):
               pyrosim.Send_Synapse(sourceNeuronName = currentRow, targetNeuronName = currentColumn+3, \
                                    weight = self.weights[currentRow][currentColumn])
-              
+             
       # while not os.path.exists("brain.nndf"):
       #     time.sleep(0.01)
           
