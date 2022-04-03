@@ -1,8 +1,10 @@
 
 import numpy
 
-numSensorNeurons = 9
+numSensorNeurons = 4
 numMotorNeurons = 8
+
+motorJointRange = 0.2
 
 initialNeuronValue = numpy.pi/4.0
 
