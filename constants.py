@@ -1,8 +1,8 @@
 
 import numpy
 
-numSensorNeurons = 4
-numMotorNeurons = 8
+numSensorNeurons = 3
+numMotorNeurons = 2
 
 motorJointRange = 0.2
 
@@ -24,7 +24,7 @@ xValsMin = 0
 xValsMax = 2*(numpy.pi)
 
 # Size values
-length = 1.0
+length = 0.75
 width = 1.0
 height = 1.0
 
@@ -37,5 +37,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 10
-populationSize = 10
+numberOfGenerations = 2
+populationSize = 2
