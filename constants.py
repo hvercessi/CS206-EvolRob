@@ -2,7 +2,7 @@
 import numpy
 
 numSensorNeurons = 3
-numMotorNeurons = 2
+numMotorNeurons = 6
 
 motorJointRange = 0.2
 
@@ -17,7 +17,7 @@ frontLegFrequency = 10
 frontLegPhaseOffset = (numpy.pi/4.0)
 
 
-simRange = 800
+simRange = 900
 sleepTime = 0.01
 
 xValsMin = 0
