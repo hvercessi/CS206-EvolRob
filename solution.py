@@ -78,8 +78,8 @@ class SOLUTION:
     
       
       pyrosim.Send_Sensor_Neuron(name = 0 , linkName = "Torso")
-      pyrosim.Send_Sensor_Neuron(name = 1 , linkName = "FrontLeg")
-      pyrosim.Send_Sensor_Neuron(name = 2 , linkName = "BackLeg")
+      pyrosim.Send_Sensor_Neuron(name = 1 , linkName = "LeftLeg")
+      pyrosim.Send_Sensor_Neuron(name = 2 , linkName = "LeftLeg")
      
       
       # pyrosim.Send_Sensor_Neuron(name = 3 , linkName = "LeftLeg")
