@@ -29,7 +29,7 @@ class MOTOR:
                                                        jointName = self.jointName, \
                                                        controlMode = p.POSITION_CONTROL, \
                                                        targetPosition = desiredAngle, \
-                                                       maxForce = 400) )
+                                                       maxForce = 300) )
     def Get_Value(self):
         pass
     def Save_Values(self):

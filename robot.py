@@ -46,14 +46,18 @@ class ROBOT:
                 angle = self.nn.Get_Value_Of(neuronName)
                 desiredAngle = angle* c.motorJointRange
                 
-                if jointName == "Torso_LeftLeg" and self.nn.Get_Value_Of(3) != None:
+                if jointName == "LeftLeg_LeftLowerLeg" and self.nn.Get_Value_Of(5) != None and self.nn.Get_Value_Of(7) != None:
                     
-                    if (self.nn.Get_Value_Of(3) < 0) and (self.nn.Get_Value_Of(5) > 0):
-                        self.motors["LeftLeg_LeftLowerLeg"].Set_Value(self, -(desiredAngle))
+                    if (self.nn.Get_Value_Of(7) > self.nn.Get_Value_Of(5)):
+                        angle = self.nn.Get_Value_Of(5)
+                        desiredAngle = angle* c.motorJointRange
+                        self.motors[jointName].Set_Value(self, (desiredAngle))
                         
-                elif jointName == "Torso_RightLeg" and self.nn.Get_Value_Of(4) != None:
-                    if (self.nn.Get_Value_Of(4) < 0) and (self.nn.Get_Value_Of(6) > 0):
-                        self.motors["RightLeg_RightLowerLeg"].Set_Value(self, -(desiredAngle))
+                elif jointName == "RightLeg_RightLowerLeg" and self.nn.Get_Value_Of(6) != None and self.nn.Get_Value_Of(8) != None:
+                    if (self.nn.Get_Value_Of(8) > self.nn.Get_Value_Of(6)):
+                        angle = self.nn.Get_Value_Of(6)
+                        desiredAngle = angle* c.motorJointRange
+                        self.motors[jointName].Set_Value(self, (desiredAngle))
                 else:     
                     self.motors[jointName].Set_Value(self, desiredAngle)
                 #print(neuronName + ", " + jointName + ", ", end="")
