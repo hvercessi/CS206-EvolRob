@@ -154,7 +154,9 @@ class SOLUTION:
           time.sleep(0.01)
           
         with open(fitnessFileName) as fitnessFile:
-            self.fitness = float(fitnessFile.readline())
+            fitnessList = fitnessFile.readline().split(" ")
+            self.fitnessX = float(fitnessList[0])
+            self.fitnessZ = float(fitnessList[1])
         
         # print("\n****************************\n")
         # print("Fitness " + str(self.myID) + ": " + str(self.fitness))

@@ -58,13 +58,18 @@ class ROBOT:
         basePosition = basePositionAndOrientation[0]
 
         xPosition = basePosition[0]
-        
+        zPosition = basePosition[2]
+        print("\n*******************************\n")
+        print(xPosition)
+        print(zPosition)
+        print("\n*******************************\n")
+        #exit()
         fitnessFileName = "fitness" + str(self.solutionID) + ".txt"
         tmpFile = "tmp" + str(self.solutionID) + ".txt"
         
         with open(tmpFile, 'w') as f:
             #print("writing to file")
-            f.write(str(xPosition))
+            f.write(str(xPosition)+" "+str(zPosition))
             #print("done writing to file")
             
         os.system("rename " + tmpFile + " " + fitnessFileName)
