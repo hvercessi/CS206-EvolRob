@@ -59,11 +59,11 @@ class ROBOT:
 
         xPosition = basePosition[0]
         zPosition = basePosition[2]
-        print("\n*******************************\n")
-        print(xPosition)
-        print(zPosition)
-        print("\n*******************************\n")
-        #exit()
+        # print("\n*******************************\n")
+        # print(xPosition)
+        # print(zPosition)
+        # print("\n*******************************\n")
+   
         fitnessFileName = "fitness" + str(self.solutionID) + ".txt"
         tmpFile = "tmp" + str(self.solutionID) + ".txt"
         

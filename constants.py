@@ -4,7 +4,7 @@ import numpy
 numSensorNeurons = 3
 numMotorNeurons = 6
 
-motorJointRange = 0.3 #0.2
+motorJointRange = 1.0 #0.2
 
 initialNeuronValue = numpy.pi/4.0
 
@@ -24,9 +24,9 @@ xValsMin = 0
 xValsMax = 2*(numpy.pi)
 
 # Size values
-length = 0.75
-width = 1.0
-height = 1.0
+length = 0.65
+width = 0.85
+height = 0.75
 
 # Position Values
 x_body = 0.0
