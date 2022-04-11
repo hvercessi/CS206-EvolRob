@@ -4,7 +4,7 @@ import numpy
 numSensorNeurons = 3
 numMotorNeurons = 6
 
-motorJointRange = 1.0 #0.2
+motorJointRange = 0.8 #0.2
 
 initialNeuronValue = numpy.pi/4.0
 
@@ -37,5 +37,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 10
-populationSize = 10
+numberOfGenerations = 15
+populationSize = 15

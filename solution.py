@@ -21,7 +21,7 @@ class SOLUTION:
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
         
         self.weights = self.weights*2 - 1
-        print(self.weights)
+        #print(self.weights)
         self.myID = iD
 
     def Set_ID(self, iD):
