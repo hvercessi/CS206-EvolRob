@@ -134,9 +134,9 @@ def Send_Cube(name="default",pos=[0,0,0],size=[1,1,1]):
 
     availableLinkIndex = availableLinkIndex + 1
 
-def Send_Joint(name,parent,child,type,position,jointAxis):
+def Send_Joint(name,parent,child,type,position,jointAxis,upperLimit,lowerLimit):
 
-    joint = JOINT(name,parent,child,type,position)
+    joint = JOINT(name,parent,child,type,position,upperLimit,lowerLimit)
 
     joint.Save(f, jointAxis)
 

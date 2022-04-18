@@ -2,7 +2,7 @@ from pyrosim.commonFunctions import Save_Whitespace
 
 class JOINT: 
 
-    def __init__(self,name,parent,child,type,position):
+    def __init__(self,name,parent,child,type,position,upperLimit,lowerLimit):
 
         self.name = name
 
@@ -15,6 +15,10 @@ class JOINT:
         self.position = position
 
         self.depth = 1
+        
+        self.upperLimit = upperLimit
+        
+        self.lowerLimit = lowerLimit
 
     def Save(self,f,jointAxis):
 
@@ -35,7 +39,7 @@ class JOINT:
         f.write(' <axis xyz="' + jointAxis + '"/>\n')
 
         Save_Whitespace(self.depth,f)
-        f.write('   <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>\n')
+        f.write('   <limit effort="0.0" lower="' + str(self.lowerLimit) +'" upper="' + str(self.upperLimit) + '" velocity="0.0"/>\n')
 
         Save_Whitespace(self.depth,f)
         f.write('</joint>' + '\n')
