@@ -10,8 +10,11 @@ class PARALLEL_HILL_CLIMBER:
     
     def __init__(self):
         
-        os.system("del brain*.nndf")
-        os.system("del fitness*.txt")
+        while os.path.exists("fitness*.txt"):
+            os.system("del fitness*.txt")
+        
+        while os.path.exists("brain*.nndf"):
+            os.system("del brain*.nndf")
         
         self.nextAvailableID = 0
         
