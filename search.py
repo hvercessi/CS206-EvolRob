@@ -13,7 +13,6 @@ import os
 # hc.Evolve()
 # hc.Show_Best()
 
-os.system("del fitness*.txt")
 phc = PARALLEL_HILL_CLIMBER()
 phc.Evolve()
 phc.Show_Best()

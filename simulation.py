@@ -61,5 +61,5 @@ class SIMULATION:
         #     self.robot.sensors[s].Save_Values()
         # for m in self.robot.motors:
         #     self.robot.motors[m].Save_Values()
-        os.system("del fitness*.txt")
+        # os.system("del fitness*.txt")
         p.disconnect()  
