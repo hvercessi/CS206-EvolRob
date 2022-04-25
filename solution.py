@@ -45,6 +45,21 @@ class SOLUTION:
       
       pyrosim.Send_Cube(name="Hips", pos=[0.0,0.0,4.0] , size=[0.8,1.0,0.5])
       
+      # Lower Torso
+      pyrosim.Send_Joint( name = "Hips_LowerTorso" , parent= "Hips" , child = "LowerTorso",\
+                         type = "revolute", position = [0.0,0.0,4.25], jointAxis = "0 1 0", upperLimit = 3.1415/12, lowerLimit = -3.1415/12)
+      pyrosim.Send_Cube(name="LowerTorso", pos=[0.0,0.0,0.125] , size=[0.675,0.875,0.25])
+      
+      # Mid Torso
+      pyrosim.Send_Joint( name = "LowerTorso_MidTorso" , parent= "LowerTorso" , child = "MidTorso",\
+                         type = "revolute", position = [0.0,0.0,0.25], jointAxis = "0 1 0", upperLimit = 0.0, lowerLimit = 0.0)
+      pyrosim.Send_Cube(name="MidTorso", pos=[0.0,0.0,0.125] , size=[0.55,0.75,0.25])
+      
+      # Upper Torso
+      pyrosim.Send_Joint( name = "MidTorso_UpperTorso" , parent= "MidTorso" , child = "UpperTorso",\
+                         type = "revolute", position = [0.0,0.0,0.25], jointAxis = "0 1 0", upperLimit = 3.1415/12, lowerLimit = -3.1415/12)
+      pyrosim.Send_Cube(name="UpperTorso", pos=[0.0,0.0,0.25] , size=[0.65,0.85,0.5])
+      
       # Upper Legs
       pyrosim.Send_Joint( name = "Hips_LeftLeg" , parent= "Hips" , child = "LeftLeg",\
                          type = "revolute", position = [0.0,0.5,4.0], jointAxis = "0 1 0", upperLimit = 3.1415/10, lowerLimit = -3.1415/10)
