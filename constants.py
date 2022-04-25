@@ -2,7 +2,7 @@
 import numpy
 
 numSensorNeurons = 5
-numMotorNeurons = 6
+numMotorNeurons = 15
 
 motorJointRange = 2.0
 
@@ -37,5 +37,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 10
-populationSize = 10
+numberOfGenerations = 3
+populationSize = 3
