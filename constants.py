@@ -4,7 +4,7 @@ import numpy
 numSensorNeurons = 3
 numMotorNeurons = 15
 
-motorJointRange = 2.0
+motorJointRange = 1.0
 
 initialNeuronValue = numpy.pi/4.0
 
@@ -18,7 +18,7 @@ frontLegPhaseOffset = (numpy.pi/4.0)
 
 
 simRange = 1000
-sleepTime = 1/100
+sleepTime = 1/60
 
 xValsMin = 0
 xValsMax = 2*(numpy.pi)
@@ -37,5 +37,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 3
-populationSize = 3
+numberOfGenerations = 8
+populationSize = 8
