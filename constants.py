@@ -1,7 +1,7 @@
 
 import numpy
 
-numSensorNeurons = 5
+numSensorNeurons = 3
 numMotorNeurons = 15
 
 motorJointRange = 2.0
