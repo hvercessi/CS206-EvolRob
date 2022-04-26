@@ -23,7 +23,7 @@ class SIMULATION:
         (self.robot).Prepare_To_Sense()
         (self.robot).Prepare_To_Act()
         
-    def __init__(self, directOrGUI, solutionID):
+    def __init__(self, directOrGUI, solutionID, gen):
         
         if directOrGUI == "DIRECT":
             self.directOrGUI = "DIRECT"
@@ -31,7 +31,7 @@ class SIMULATION:
         elif directOrGUI == "GUI":
             self.directOrGUI = "GUI"
             self.physicsClient = p.connect(p.GUI)
-        
+        self.gen = gen
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0,0,-9.8)
         self.world = WORLD()
@@ -61,6 +61,6 @@ class SIMULATION:
         #      self.robot.sensors[s].Save_Values()
         #      for m in self.robot.motors:
         #          self.robot.motors[m].Save_Values()
-        self.robot.SaveValues()
-        os.system("del fitness*.txt")
+        self.robot.Save_Values(self.gen)
+        #os.system("del fitness*.txt")
         p.disconnect()  

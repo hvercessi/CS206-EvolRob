@@ -17,13 +17,13 @@ class SOLUTION:
         self.weights = self.weights*2 - 1
         #print(self.weights)
     
-    def __init__(self, iD):
+    def __init__(self, iD,gen):
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
         
         self.weights = self.weights*2 - 1
         #print(self.weights)
         self.myID = iD
-        
+        self.gen=gen
 
     def Set_ID(self, iD):
         self.myID = iD
@@ -113,11 +113,11 @@ class SOLUTION:
       
       # Feet
       pyrosim.Send_Joint( name = "LeftLowerLeg_LeftFoot" , parent= "LeftLowerLeg" , child = "LeftFoot",\
-                         type = "revolute", position = [0.0,0.0,-1.625], jointAxis = "0 1 0", upperLimit = 3.1415/10, lowerLimit = -3.1415/10)
+                         type = "revolute", position = [0.0,0.0,-1.625], jointAxis = "0 1 0", upperLimit = 3.1415/8, lowerLimit = -3.1415/4)
       pyrosim.Send_Cube(name="LeftFoot", pos=[0.0,0.0,-0.0625] , size=[0.675,0.675,0.225])
       
       pyrosim.Send_Joint( name = "RightLowerLeg_RightFoot" , parent= "RightLowerLeg" , child = "RightFoot",\
-                         type = "revolute", position = [0.0,0.0,-1.625], jointAxis = "0 1 0", upperLimit = 3.1415/10, lowerLimit = -3.1415/10)
+                         type = "revolute", position = [0.0,0.0,-1.625], jointAxis = "0 1 0", upperLimit = 3.1415/8, lowerLimit = -3.1415/4)
       pyrosim.Send_Cube(name="RightFoot", pos=[0.0,0.0,-0.0625] , size=[0.675,0.675,0.225])
       
       
@@ -191,7 +191,8 @@ class SOLUTION:
         self.Generate_Body()
         self.Generate_Brain()
         
-        os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID) )
+        os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID)+ " " + str(self.gen ))
+    
     
     def Wait_For_Simulation_To_End(self):
         fitnessFileName = fitnessFileName = "fitness" + str(self.myID) + ".txt"

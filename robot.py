@@ -20,7 +20,7 @@ class ROBOT:
         self.sensors = {}
         self.robotId = p.loadURDF("body.urdf")
         self.solutionID = solutionID
-        
+        self.fitnessList = []
         self.nn = NEURAL_NETWORK("brain" + str(self.solutionID) + ".nndf")
         os.system("del " + "brain" + str(self.solutionID) + ".nndf")
     
@@ -76,7 +76,7 @@ class ROBOT:
 
         self.xPosition = basePosition[0]
         self.zPosition = basePosition[2]
-        self.fitnessList =[self.solutionID, self.xPosition, self.zPosition]
+        
         # print("\n*******************************\n")
         # print(xPosition)
         # print(zPosition)
@@ -93,7 +93,9 @@ class ROBOT:
         os.system("rename " + tmpFile + " " + fitnessFileName)
         
         
-    def Save_Values(self):
-        with open('data/RobotFitness.npy', 'wb') as f:
-            numpy.save(f, self.fitnessList)
+    def Save_Values(self,gen):
+        self.fitnessList = [gen, self.xPosition, self.zPosition]
+        f = open('data/RobotFitness.txt', 'a')
+        f.write(str(gen)+"|"+str(self.xPosition)+"|"+str(self.zPosition)+"\n")
+        f.close()
         

@@ -20,7 +20,7 @@ class PARALLEL_HILL_CLIMBER:
         self.currGen=0
         self.parents = {}
         for i in range(c.populationSize):
-            self.parents[i] = SOLUTION(self.nextAvailableID)
+            self.parents[i] = SOLUTION(self.nextAvailableID,self.currGen)
             self.nextAvailableID = self.nextAvailableID+1
 
         
@@ -45,6 +45,7 @@ class PARALLEL_HILL_CLIMBER:
         for key in self.parents:
             if (self.parents[key].fitnessX < self.children[key].fitnessX) and (self.parents[key].fitnessZ < self.children[key].fitnessZ):
                 self.parents[key] = self.children[key]
+                self.parents[key].gen = self.currGen
             
     def Print(self):
         pass
