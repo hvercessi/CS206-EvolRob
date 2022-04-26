@@ -14,14 +14,14 @@ i = 0
 xValues = []
 zValues = []
 generations = []  
-colors = ListedColormap(['red', 'blue', 'purple','green', 'yellow', 'orange', 'pink']) 
+#colors = ListedColormap(['red', 'blue', 'purple','green', 'yellow', 'orange', 'pink']) 
 with open("data/RobotFitness.txt", 'r') as f:
     line = f.readline()
     while line != "":
         
         fitnessValue = line.rstrip().split("|")
         print(fitnessValue)
-        generations.append(fitnessValue[0])
+        generations.append(int(fitnessValue[0]))
         xValues.append(float(fitnessValue[1]))
         zValues.append(float(fitnessValue[2]))
         line = f.readline()

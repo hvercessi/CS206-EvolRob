@@ -16,5 +16,5 @@ import os
 phc = PARALLEL_HILL_CLIMBER()
 phc.Evolve()
 phc.Show_Best()
-
+os.system("python analyze.py")
 

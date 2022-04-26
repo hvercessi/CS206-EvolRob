@@ -7,6 +7,7 @@
 from simulation import SIMULATION
 import pybullet as p
 import sys
+import os
 
 directOrGUI = sys.argv[1]
 solutionID = sys.argv[2]
