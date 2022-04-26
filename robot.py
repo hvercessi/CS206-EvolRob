@@ -6,6 +6,7 @@ from sensor import SENSOR
 from motor import MOTOR
 from pyrosim.neuralNetwork import NEURAL_NETWORK
 import os
+import numpy
 
 class ROBOT:
     def __init__(self):
@@ -73,8 +74,9 @@ class ROBOT:
 
         basePosition = basePositionAndOrientation[0]
 
-        xPosition = basePosition[0]
-        zPosition = basePosition[2]
+        self.xPosition = basePosition[0]
+        self.zPosition = basePosition[2]
+        self.fitnessList =[self.solutionID, self.xPosition, self.zPosition]
         # print("\n*******************************\n")
         # print(xPosition)
         # print(zPosition)
@@ -85,11 +87,13 @@ class ROBOT:
         
         with open(tmpFile, 'w') as f:
             #print("writing to file")
-            f.write(str(xPosition)+" "+str(zPosition))
+            f.write(str(self.xPosition)+" "+str(self.zPosition))
             #print("done writing to file")
             
         os.system("rename " + tmpFile + " " + fitnessFileName)
         
         
-        
+    def Save_Values(self):
+        with open('data/RobotFitness.npy', 'wb') as f:
+            numpy.save(f, self.fitnessList)
         

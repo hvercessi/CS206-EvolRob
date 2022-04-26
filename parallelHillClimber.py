@@ -17,7 +17,7 @@ class PARALLEL_HILL_CLIMBER:
             os.system("del brain*.nndf")
         
         self.nextAvailableID = 0
-        
+        self.currGen=0
         self.parents = {}
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
@@ -102,7 +102,8 @@ class PARALLEL_HILL_CLIMBER:
             
         self.Evaluate(self.parents)
         
-        for currentGeneration in range(c.numberOfGenerations):
+        for currentGeneration in range(c.numberOfGenerations): 
+            self.currGen = currentGeneration
             print("\n        Generation: " + str(currentGeneration)+"\n")
             self.Evolve_For_One_Generation()
              
