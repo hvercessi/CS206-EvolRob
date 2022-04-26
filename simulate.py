@@ -10,7 +10,7 @@ import sys
 
 directOrGUI = sys.argv[1]
 solutionID = sys.argv[2]
-
-simulation = SIMULATION(directOrGUI, solutionID)
+gen = sys.argv[3]
+simulation = SIMULATION(directOrGUI, solutionID, gen)
 simulation.Run()
 simulation.Get_Fitness()

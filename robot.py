@@ -73,8 +73,8 @@ class ROBOT:
 
         basePosition = basePositionAndOrientation[0]
 
-        xPosition = basePosition[0]
-        zPosition = basePosition[2]
+        self.xPosition = basePosition[0]
+        self.zPosition = basePosition[2]
         # print("\n*******************************\n")
         # print(xPosition)
         # print(zPosition)
@@ -85,11 +85,15 @@ class ROBOT:
         
         with open(tmpFile, 'w') as f:
             #print("writing to file")
-            f.write(str(xPosition)+" "+str(zPosition))
+            f.write(str(self.xPosition)+" "+str(self.zPosition))
             #print("done writing to file")
             
         os.system("rename " + tmpFile + " " + fitnessFileName)
         
         
-        
+    def Save_Values(self,gen):
+        self.fitnessList = [gen, self.xPosition, self.zPosition]
+        f = open('data/RobotFitness.txt', 'a')
+        f.write(str(gen)+"|"+str(self.xPosition)+"|"+str(self.zPosition)+"\n")
+        f.close()        
         

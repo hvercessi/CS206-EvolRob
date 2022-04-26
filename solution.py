@@ -17,13 +17,13 @@ class SOLUTION:
         self.weights = self.weights*2 - 1
         #print(self.weights)
     
-    def __init__(self, iD):
+    def __init__(self, iD, gen):
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
         
         self.weights = self.weights*2 - 1
         #print(self.weights)
         self.myID = iD
-
+        self.gen = gen
     def Set_ID(self, iD):
         self.myID = iD
     
@@ -156,7 +156,7 @@ class SOLUTION:
         self.Generate_Body()
         self.Generate_Brain()
         
-        os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID) )
+        os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID)+ " " + str(self.gen ) )
     
     def Wait_For_Simulation_To_End(self):
         fitnessFileName = fitnessFileName = "fitness" + str(self.myID) + ".txt"
