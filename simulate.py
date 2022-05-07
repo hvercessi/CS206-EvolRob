@@ -15,3 +15,4 @@ gen = sys.argv[3]
 simulation = SIMULATION(directOrGUI, solutionID, gen)
 simulation.Run()
 simulation.Get_Fitness()
+

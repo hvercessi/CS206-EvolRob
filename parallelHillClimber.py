@@ -30,6 +30,7 @@ class PARALLEL_HILL_CLIMBER:
         for key in self.parents:
             
             self.children[key] = copy.deepcopy(self.parents[key])
+            self.children[key].gen = self.parents[key].gen + 1
         
             self.children[key].Set_ID(self.nextAvailableID)
         
@@ -45,7 +46,9 @@ class PARALLEL_HILL_CLIMBER:
         for key in self.parents:
             if (self.parents[key].fitness < self.children[key].fitness):
                 self.parents[key] = self.children[key]
-                self.parents[key].gen = self.currGen
+                #self.parents[key].gen = self.currGen
+                self.parents[key].Save_Values()
+        
             
     def Print(self):
         pass
@@ -87,6 +90,7 @@ class PARALLEL_HILL_CLIMBER:
         #self.Print()
 
         self.Select()
+        
         
         
         

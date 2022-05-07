@@ -207,4 +207,8 @@ class SOLUTION:
         os.system("del " + fitnessFileName)
         
     
-      
+    def Save_Values(self):
+        #self.fitnessList = [self.gen, self.xPosition, self.zPosition]
+        f = open('data/SolutionFitness.txt', 'a')
+        f.write(str(self.gen)+"|"+str(self.fitness)+"\n")
+        f.close()
