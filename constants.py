@@ -37,5 +37,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 3
-populationSize = 3
+numberOfGenerations = 10
+populationSize = 10
