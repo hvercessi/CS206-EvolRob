@@ -201,9 +201,7 @@ class SOLUTION:
           time.sleep(0.01)
           
         with open(fitnessFileName, 'r') as fitnessFile:
-            fitnessList = fitnessFile.readline().split(" ")
-            self.fitnessX = float(fitnessList[0])
-            self.fitnessZ = float(fitnessList[1])
+            self.fitness = float(fitnessFile.readline())
             
             
         os.system("del " + fitnessFileName)

@@ -43,7 +43,7 @@ class PARALLEL_HILL_CLIMBER:
 
     def Select(self):
         for key in self.parents:
-            if (self.parents[key].fitnessX < self.children[key].fitnessX) and (self.parents[key].fitnessZ < self.children[key].fitnessZ):
+            if (self.parents[key].fitness < self.children[key].fitness):
                 self.parents[key] = self.children[key]
                 self.parents[key].gen = self.currGen
             
@@ -56,16 +56,16 @@ class PARALLEL_HILL_CLIMBER:
         #     print("\n*********************************************\n")
         
     def Show_Best(self):
-        bestX = -100000000.0
-        bestZ = -100000000.0
+        best = -100000000.0
+        
         keyBest = 0
         for key in self.parents:
-            if ((self.parents[key].fitnessX > bestX) and (self.parents[key].fitnessZ > bestZ)):
+            if ((self.parents[key].fitness > best)):
                 keyBest = key
-                bestX = self.parents[key].fitnessX
-                bestZ = self.parents[key].fitnessZ
+                best = self.parents[key].fitness
+                
         print("\n*********************************************\n")
-        print("\n             Best Fitness: "+ str(bestX)+" "+str(bestZ))
+        print("\n             Best Fitness: "+ str(best))
         print("\n*********************************************\n")
         self.parents[keyBest].Start_Simulation("GUI")
         
@@ -84,7 +84,7 @@ class PARALLEL_HILL_CLIMBER:
 
         self.Evaluate(self.children)
         
-        self.Print()
+        #self.Print()
 
         self.Select()
         
