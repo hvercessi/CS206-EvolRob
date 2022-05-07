@@ -15,7 +15,7 @@ fitValues = []
 #zValues = []
 generations = []  
 #colors = ListedColormap(['red', 'blue', 'purple','green', 'yellow', 'orange', 'pink']) 
-with open("data/RobotFitness.txt", 'r') as f:
+with open("SolutionFitness.txt", 'r') as f:
     line = f.readline()
     while line != "":
         
@@ -31,6 +31,6 @@ with open("data/RobotFitness.txt", 'r') as f:
 #scatter = matplotlib.pyplot.scatter(fitValues, generations, label="Fitness Values")
 #matplotlib.pyplot.plot(positionValuesFront, label="Front Leg Target Angles", linewidth=1)
 
-matplotlib.pyplot.plot(generations, fitValues, label="Fitness Values")
+matplotlib.pyplot.scatter(generations, fitValues, label="Fitness Values")
 matplotlib.pyplot.show()
 

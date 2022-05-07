@@ -176,7 +176,7 @@
     <link name="LeftUpperArm">
         <inertial>
             <origin xyz="0.0 0.0 -0.5" rpy="0 0 0"/>
-            <mass value="1.5" />
+            <mass value="2.0" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -205,7 +205,7 @@
     <link name="RightUpperArm">
         <inertial>
             <origin xyz="0.0 0.0 -0.5" rpy="0 0 0"/>
-            <mass value="1.5" />
+            <mass value="2.0" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -229,7 +229,7 @@
        <child  link="LeftLowerArm"/>
        <origin rpy="0 0 0" xyz="0.0 0.0 -0.875" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-0.5235833333333334" upper="0.0" velocity="0.0"/>
+       <limit effort="0.0" lower="0.5235833333333334" upper="0.0" velocity="0.0"/>
     </joint>
     <link name="LeftLowerArm">
         <inertial>
@@ -258,7 +258,7 @@
        <child  link="RightLowerArm"/>
        <origin rpy="0 0 0" xyz="0.0 0.0 -0.875" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-0.5235833333333334" upper="0.0" velocity="0.0"/>
+       <limit effort="0.0" lower="0.5235833333333334" upper="0.0" velocity="0.0"/>
     </joint>
     <link name="RightLowerArm">
         <inertial>
@@ -287,12 +287,12 @@
        <child  link="LeftLeg"/>
        <origin rpy="0 0 0" xyz="0.0 0.5 4.0" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-1.57075" upper="1.57075" velocity="0.0"/>
+       <limit effort="0.0" lower="0.785375" upper="-0.785375" velocity="0.0"/>
     </joint>
     <link name="LeftLeg">
         <inertial>
             <origin xyz="0.0 0.0 -1.125" rpy="0 0 0"/>
-            <mass value="2.75" />
+            <mass value="3.5" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -316,12 +316,12 @@
        <child  link="RightLeg"/>
        <origin rpy="0 0 0" xyz="0.0 -0.5 4.0" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-1.57075" upper="1.57075" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.785375" upper="0.785375" velocity="0.0"/>
     </joint>
     <link name="RightLeg">
         <inertial>
             <origin xyz="0.0 0.0 -1.125" rpy="0 0 0"/>
-            <mass value="2.75" />
+            <mass value="3.5" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -350,7 +350,7 @@
     <link name="LeftLowerLeg">
         <inertial>
             <origin xyz="0.0 0.0 -0.8125" rpy="0 0 0"/>
-            <mass value="1.5" />
+            <mass value="2.75" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -379,7 +379,7 @@
     <link name="RightLowerLeg">
         <inertial>
             <origin xyz="0.0 0.0 -0.8125" rpy="0 0 0"/>
-            <mass value="1.5" />
+            <mass value="2.75" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -408,7 +408,7 @@
     <link name="LeftFoot">
         <inertial>
             <origin xyz="0.0 0.0 -0.0625" rpy="0 0 0"/>
-            <mass value="1" />
+            <mass value="1.5" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>
@@ -437,7 +437,7 @@
     <link name="RightFoot">
         <inertial>
             <origin xyz="0.0 0.0 -0.0625" rpy="0 0 0"/>
-            <mass value="1" />
+            <mass value="1.5" />
             <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
         </inertial>
         <visual>

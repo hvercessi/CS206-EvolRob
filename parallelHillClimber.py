@@ -5,6 +5,8 @@ import numpy as np
 import constants as c
 import copy 
 import os
+import random as rand
+
 
 class PARALLEL_HILL_CLIMBER:
     
@@ -38,10 +40,13 @@ class PARALLEL_HILL_CLIMBER:
 
 
     def Mutate(self):
+        
         for key in self.children:
+            if self.children[key].myID % 2 == 0:
+                self.children[key].Mutate()
+                
             self.children[key].Mutate()
-
-
+                
     def Select(self):
         for key in self.parents:
             if (self.parents[key].fitness < self.children[key].fitness):
