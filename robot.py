@@ -50,9 +50,14 @@ class ROBOT:
             
     def Sense(self, i):
         for name in self.sensors:
-            self.sensors[name].Get_Value(i)
+            #self.sensors[name].Get_Value(i)
             # if name == 1:
-            #self.sensors[name].values.append(numpy.sin(pyrosim.Get_Touch_Sensor_Value_For_Link(self.sensors[name].linkName)))
+            if name ==1:
+                self.sensors[name].values.append(-numpy.sin(pyrosim.Get_Touch_Sensor_Value_For_Link(self.sensors[name].linkName)))
+            elif name == 2:
+                self.sensors[name].values.append(numpy.sin(pyrosim.Get_Touch_Sensor_Value_For_Link(self.sensors[name].linkName)))
+            else:
+                self.sensors[name].Get_Value(i)
             
     def Act(self, i):
         for neuronName in self.nn.Get_Neuron_Names():
@@ -96,7 +101,7 @@ class ROBOT:
         # print(xPosition)
         # print(zPosition)
         # print("\n*******************************\n")
-        self.fitness = self.xPosition + self.zPosition
+        self.fitness = self.xPosition * self.zPosition
         
         fitnessFileName = "fitness" + str(self.solutionID) + ".txt"
         tmpFile = "tmp" + str(self.solutionID) + ".txt"

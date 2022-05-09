@@ -4,17 +4,17 @@ import numpy
 numSensorNeurons = 3
 numMotorNeurons = 10
 
-motorJointRange = 0.7
+motorJointRange = 0.3
 
 initialNeuronValue = numpy.pi/4.0
 
 leftLegAmplitude = -(numpy.pi)/2
-leftLegFrequency = 4
+leftLegFrequency = 6
 leftLegPhaseOffset = 0
 
 rightLegAmplitude = (numpy.pi)/2
-rightLegFrequency = 4
-rightLegPhaseOffset = (numpy.pi)/4
+rightLegFrequency = 6
+rightLegPhaseOffset = (numpy.pi)
 
 lowerLegAmp = numpy.pi
 
@@ -43,5 +43,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 20
-populationSize = 5
+numberOfGenerations = 15
+populationSize = 10

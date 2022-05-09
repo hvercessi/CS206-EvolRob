@@ -102,22 +102,22 @@ class SOLUTION:
       
       # Left Upper Arm
       pyrosim.Send_Joint( name = "Shoulders_LeftUpperArm" , parent= "Shoulders" , child = "LeftUpperArm",\
-                         type = "revolute", position = [0.0,-0.95,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/8.0, lowerLimit = -numpy.pi/8.0)
+                         type = "revolute", position = [0.0,-0.95,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/4.0, lowerLimit = -numpy.pi/4.0)
       pyrosim.Send_Cube(name="LeftUpperArm", pos=[0.0,0.0,-0.5] , size=[0.35,0.35,1.0], mass=2.0)
       
       # Right Upper Arm
       pyrosim.Send_Joint( name = "Shoulders_RightUpperArm" , parent= "Shoulders" , child = "RightUpperArm",\
-                         type = "revolute", position = [0.0,0.95,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/8.0, lowerLimit = -numpy.pi/8.0)
+                         type = "revolute", position = [0.0,0.95,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/4.0, lowerLimit = -numpy.pi/4.0)
       pyrosim.Send_Cube(name="RightUpperArm", pos=[0.0,0.0,-0.5] , size=[0.35,0.35,1.0], mass=2.0)
       
       # Left Lower Arm
       pyrosim.Send_Joint( name = "LeftUpperArm_LeftLowerArm" , parent= "LeftUpperArm" , child = "LeftLowerArm",\
-                         type = "revolute", position = [0.0,0.0,-0.875], jointAxis = "0 1 0", upperLimit = 0.0, lowerLimit = -numpy.pi/6.0)
+                         type = "revolute", position = [0.0,0.0,-0.875], jointAxis = "0 1 0", upperLimit = 0.0, lowerLimit = -numpy.pi/4.0)
       pyrosim.Send_Cube(name="LeftLowerArm", pos=[0.0,0.0,-0.475] , size=[0.3,0.3,0.95],mass=1.5)
       
       # Right Lower Arm
       pyrosim.Send_Joint( name = "RightUpperArm_RightLowerArm" , parent= "RightUpperArm" , child = "RightLowerArm",\
-                         type = "revolute", position = [0.0,0.0,-0.875], jointAxis = "0 1 0", upperLimit = 0.0, lowerLimit = -numpy.pi/6.0)
+                         type = "revolute", position = [0.0,0.0,-0.875], jointAxis = "0 1 0", upperLimit = 0.0, lowerLimit = -numpy.pi/4.0)
       pyrosim.Send_Cube(name="RightLowerArm", pos=[0.0,0.0,-0.475] , size=[0.3,0.3,0.95],mass=1.5)
       
       

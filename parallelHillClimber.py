@@ -89,6 +89,8 @@ class PARALLEL_HILL_CLIMBER:
         self.Spawn()
 
         self.Mutate()
+        
+        self.Mutate()
 
         self.Evaluate(self.children)
         

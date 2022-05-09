@@ -258,7 +258,7 @@
        <child  link="LeftUpperArm"/>
        <origin rpy="0 0 0" xyz="0.0 -0.95 0.125" />
      <axis xyz="1 1 0"/>
-       <limit effort="0.0" lower="-0.39269908169872414" upper="0.39269908169872414" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0.0"/>
     </joint>
     <link name="LeftUpperArm">
         <inertial>
@@ -287,7 +287,7 @@
        <child  link="RightUpperArm"/>
        <origin rpy="0 0 0" xyz="0.0 0.95 0.125" />
      <axis xyz="1 1 0"/>
-       <limit effort="0.0" lower="-0.39269908169872414" upper="0.39269908169872414" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="0.0"/>
     </joint>
     <link name="RightUpperArm">
         <inertial>
@@ -316,7 +316,7 @@
        <child  link="LeftLowerArm"/>
        <origin rpy="0 0 0" xyz="0.0 0.0 -0.875" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-0.5235987755982988" upper="0.0" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.7853981633974483" upper="0.0" velocity="0.0"/>
     </joint>
     <link name="LeftLowerArm">
         <inertial>
@@ -345,7 +345,7 @@
        <child  link="RightLowerArm"/>
        <origin rpy="0 0 0" xyz="0.0 0.0 -0.875" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-0.5235987755982988" upper="0.0" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.7853981633974483" upper="0.0" velocity="0.0"/>
     </joint>
     <link name="RightLowerArm">
         <inertial>
