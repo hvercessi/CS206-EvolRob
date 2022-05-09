@@ -50,11 +50,11 @@ class SOLUTION:
       
       # Upper Legs
       pyrosim.Send_Joint( name = "Hips_LeftLeg" , parent= "Hips" , child = "LeftLeg",\
-                         type = "revolute", position = [0.0,0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/4, lowerLimit = -numpy.pi/2)
+                         type = "revolute", position = [0.0,0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/6, lowerLimit = -numpy.pi/6)
       pyrosim.Send_Cube(name="LeftLeg", pos=[0.0,0.0,-1.125] , size=[0.45,0.45,2.25], mass=3.5)
            
       pyrosim.Send_Joint( name = "Hips_RightLeg" , parent= "Hips", child = "RightLeg",\
-                         type = "revolute", position = [0.0,-0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/4, lowerLimit = -numpy.pi/2)
+                         type = "revolute", position = [0.0,-0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/6, lowerLimit = -numpy.pi/6)
       pyrosim.Send_Cube(name="RightLeg", pos=[0.0,0.0,-1.125] , size=[0.45,0.45,2.25],mass=3.5) 
       
       # Lower Legs
