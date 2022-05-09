@@ -70,10 +70,12 @@ Aq1 = "   Q1 Quantile: "+str(np.quantile(fitValuesA, 0.25))
 Aq2 = "   Q2 Quantile: "+str(np.quantile(fitValuesA, 0.5))
 Aq3 = "   Q3 Quantile: "+str(np.quantile(fitValuesA, 0.75))
 Aavg = "   Average Fitness: " + str(np.around(np.mean(fitValuesA), 3))
+Aq4 = "   Q4 Quantile: "+str(np.quantile(fitValuesA, 1.0))
 
 Bq1 = "   Q1 Quantile: "+str(np.quantile(fitValuesB, 0.25))
 Bq2 = "   Q2 Quantile: "+str(np.quantile(fitValuesB, 0.5))
 Bq3 = "   Q3 Quantile: "+str(np.quantile(fitValuesB, 0.75))
+Bq4 = "   Q4 Quantile: "+str(np.quantile(fitValuesB, 1.0))
 Bavg = "   Average Fitness: " + str(np.around(np.mean(fitValuesB), 3))
 
 data = [fitValuesA, fitValuesB]
@@ -82,11 +84,13 @@ data = [fitValuesA, fitValuesB]
 print("\n   Test A (no arms) Summary:\n" +Aq1 +"\n")
 print(Aq2 +"\n")
 print(Aq3 +"\n")
+print(Aq4 +"\n")
 print(Aavg +"\n")
 
 print("   ____________________\n\n   Test B (arms) Summary:\n" +Bq1 +"\n")
 print(Bq2 +"\n")
 print(Bq3 +"\n")
+print(Bq4 +"\n")
 print(Bavg +"\n")
 # ax.set_xticklabels(["A", "B"])
 # plt.xlabel("Test Group")

@@ -72,6 +72,6 @@ ax.legend([scatterA, scatterB, lineA, lineB], ["A (no arms)", "B (arms)", "Fit L
 
 plt.xlabel("Generation")
 plt.ylabel("Fitness")
-plt.title("Fitness after 15 Generations")
+plt.title("Fitness after 25 Generations")
 plt.show()
 

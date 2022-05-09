@@ -9,11 +9,11 @@ motorJointRange = 0.3
 initialNeuronValue = numpy.pi/4.0
 
 leftLegAmplitude = -(numpy.pi)/4
-leftLegFrequency = 8
+leftLegFrequency = 6
 leftLegPhaseOffset = 0
 
 rightLegAmplitude = (numpy.pi)/4
-rightLegFrequency = 8
+rightLegFrequency = 6
 rightLegPhaseOffset = (numpy.pi)
 
 lowerLegAmp = numpy.pi

@@ -26,7 +26,7 @@
        <child  link="LeftLeg"/>
        <origin rpy="0 0 0" xyz="0.0 0.5 4.0" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-0.7853981633974483" upper="0.5235987755982988" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="0.0"/>
     </joint>
     <link name="LeftLeg">
         <inertial>
@@ -55,7 +55,7 @@
        <child  link="RightLeg"/>
        <origin rpy="0 0 0" xyz="0.0 -0.5 4.0" />
      <axis xyz="0 1 0"/>
-       <limit effort="0.0" lower="-0.7853981633974483" upper="0.5235987755982988" velocity="0.0"/>
+       <limit effort="0.0" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="0.0"/>
     </joint>
     <link name="RightLeg">
         <inertial>

@@ -75,6 +75,10 @@ class PARALLEL_HILL_CLIMBER:
         print("\n*********************************************\n")
         print("\n             Best Fitness: "+ str(best))
         print("\n*********************************************\n")
+        # f = open('BestA.txt', 'w')
+        # f.write(str(self.parents[keyBest].gen)+"|"+str(self.best)+"\n")
+        # f.close()
+        
         self.parents[keyBest].Start_Simulation("GUI")
         
     

@@ -101,7 +101,7 @@ class ROBOT:
         # print(xPosition)
         # print(zPosition)
         # print("\n*******************************\n")
-        self.fitness = self.xPosition + self.zPosition
+        self.fitness = self.xPosition * self.zPosition
         
         fitnessFileName = "fitness" + str(self.solutionID) + ".txt"
         tmpFile = "tmp" + str(self.solutionID) + ".txt"
