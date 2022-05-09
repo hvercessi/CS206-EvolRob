@@ -9,12 +9,12 @@ motorJointRange = 1.0
 initialNeuronValue = numpy.pi/4.0
 
 leftLegAmplitude = -(numpy.pi)/2
-leftLegFrequency = 1
+leftLegFrequency = 2
 leftLegPhaseOffset = 0
 
 rightLegAmplitude = (numpy.pi)/2
-rightLegFrequency = 1
-rightLegPhaseOffset = 0
+rightLegFrequency = 2
+rightLegPhaseOffset = (numpy.pi)/4
 
 lowerLegAmp = numpy.pi
 
@@ -43,5 +43,5 @@ x_world = -3.0
 y_world = 3.0
 z_world = 0.5
 
-numberOfGenerations = 10
+numberOfGenerations = 15
 populationSize = 10
