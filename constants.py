@@ -2,24 +2,24 @@
 import numpy
 
 numSensorNeurons = 3
-numMotorNeurons = 8
+numMotorNeurons = 6
 
-motorJointRange = 1.0
+motorJointRange = 0.3
 
 initialNeuronValue = numpy.pi/4.0
 
-leftLegAmplitude = -(numpy.pi)/2
-leftLegFrequency = 4
+leftLegAmplitude = -(numpy.pi)/4
+leftLegFrequency = 8
 leftLegPhaseOffset = 0
 
-rightLegAmplitude = (numpy.pi)/2
-rightLegFrequency = 4
-rightLegPhaseOffset = (numpy.pi)/4
+rightLegAmplitude = (numpy.pi)/4
+rightLegFrequency = 8
+rightLegPhaseOffset = (numpy.pi)
 
 lowerLegAmp = numpy.pi
 
-defaultAmp = numpy.pi/2
-defaultFreq = 1
+defaultAmp = numpy.pi/4
+defaultFreq = 6
 defaultOffset = 0
 
 
@@ -44,4 +44,4 @@ y_world = 3.0
 z_world = 0.5
 
 numberOfGenerations = 25
-populationSize = 12
+populationSize = 10

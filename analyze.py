@@ -68,7 +68,7 @@ first_legend = ax.legend(handles=[lineA], loc='upper right')
 sec_legend = ax.legend(handles=[lineB], loc='upper left')
 third_legend = ax.legend([(scatterA, scatterB)])
 
-ax.legend([scatterA, scatterB, lineA, lineB], ["A", "B", "Fit Line A", "Fit Line B"])
+ax.legend([scatterA, scatterB, lineA, lineB], ["A (no arms)", "B (arms)", "Fit Line A", "Fit Line B"])
 
 plt.xlabel("Generation")
 plt.ylabel("Fitness")

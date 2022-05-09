@@ -79,12 +79,12 @@ Bavg = "   Average Fitness: " + str(np.around(np.mean(fitValuesB), 3))
 data = [fitValuesA, fitValuesB]
 # ax.boxplot(data)
 
-print("\n   Test A Summary:\n" +Aq1 +"\n")
+print("\n   Test A (no arms) Summary:\n" +Aq1 +"\n")
 print(Aq2 +"\n")
 print(Aq3 +"\n")
 print(Aavg +"\n")
 
-print("   ____________________\n\n   Test B Summary:\n" +Bq1 +"\n")
+print("   ____________________\n\n   Test B (arms) Summary:\n" +Bq1 +"\n")
 print(Bq2 +"\n")
 print(Bq3 +"\n")
 print(Bavg +"\n")

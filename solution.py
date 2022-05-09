@@ -50,20 +50,20 @@ class SOLUTION:
       
       # Upper Legs
       pyrosim.Send_Joint( name = "Hips_LeftLeg" , parent= "Hips" , child = "LeftLeg",\
-                         type = "revolute", position = [0.0,0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/4, lowerLimit = -numpy.pi/2)
+                         type = "revolute", position = [0.0,0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/6, lowerLimit = -numpy.pi/6)
       pyrosim.Send_Cube(name="LeftLeg", pos=[0.0,0.0,-1.125] , size=[0.45,0.45,2.25], mass=3.5)
            
       pyrosim.Send_Joint( name = "Hips_RightLeg" , parent= "Hips", child = "RightLeg",\
-                         type = "revolute", position = [0.0,-0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/4, lowerLimit = -numpy.pi/2)
+                         type = "revolute", position = [0.0,-0.5,4.0], jointAxis = "0 1 0", upperLimit = numpy.pi/6, lowerLimit = -numpy.pi/6)
       pyrosim.Send_Cube(name="RightLeg", pos=[0.0,0.0,-1.125] , size=[0.45,0.45,2.25],mass=3.5) 
       
       # Lower Legs
       pyrosim.Send_Joint( name = "LeftLeg_LeftLowerLeg" , parent= "LeftLeg" , child = "LeftLowerLeg",\
-                         type = "revolute", position = [0.0,0.0,-2.25], jointAxis = "0 1 0", upperLimit = numpy.pi/2.0, lowerLimit = 0.0)
+                         type = "revolute", position = [0.0,0.0,-2.25], jointAxis = "0 1 0", upperLimit = numpy.pi/6.0, lowerLimit = 0.0)
       pyrosim.Send_Cube(name="LeftLowerLeg", pos=[0.0,0.0,-0.8125] , size=[0.35,0.35,1.625], mass=2.75)
       
       pyrosim.Send_Joint( name = "RightLeg_RightLowerLeg" , parent= "RightLeg" , child = "RightLowerLeg",\
-                         type = "revolute", position = [0.0,0.0,-2.25], jointAxis = "0 1 0", upperLimit = numpy.pi/2.0, lowerLimit = 0.0)
+                         type = "revolute", position = [0.0,0.0,-2.25], jointAxis = "0 1 0", upperLimit = numpy.pi/6.0, lowerLimit = 0.0)
       pyrosim.Send_Cube(name="RightLowerLeg", pos=[0.0,0.0,-0.8125] , size=[0.35,0.35,1.625],mass=2.75)
       
       # Feet
@@ -168,8 +168,8 @@ class SOLUTION:
       pyrosim.Send_Motor_Neuron(name = 7 , jointName = "LeftLeg_LeftLowerLeg")
       pyrosim.Send_Motor_Neuron(name = 8 , jointName = "RightLeg_RightLowerLeg")
       
-      pyrosim.Send_Motor_Neuron(name = 9 , jointName = "LeftLowerLeg_LeftFoot")
-      pyrosim.Send_Motor_Neuron(name = 10, jointName = "RightLowerLeg_RightFoot")
+      # pyrosim.Send_Motor_Neuron(name = 9 , jointName = "LeftLowerLeg_LeftFoot")
+      # pyrosim.Send_Motor_Neuron(name = 10, jointName = "RightLowerLeg_RightFoot")
       
       
       for currentRow in range(c.numSensorNeurons):
