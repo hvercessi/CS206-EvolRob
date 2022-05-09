@@ -38,9 +38,9 @@ class ROBOT:
     def Prepare_To_Act(self):
         self.motors = {}
         for jointName in pyrosim.jointNamesToIndices:
-            if (jointName == "Hips_LeftLeg" or jointName == "RightShoulder_RightUpperArm"):
+            if (jointName == "Hips_LeftLeg"):
                 self.motors[jointName] = MOTOR(jointName, c.leftLegPhaseOffset, c.leftLegFrequency, c.leftLegAmplitude)
-            elif (jointName == "Hips_RightLeg" or jointName == "LeftShoulder_LeftUpperArm"):
+            elif (jointName == "Hips_RightLeg"):
                 self.motors[jointName] = MOTOR(jointName, c.rightLegPhaseOffset, c.rightLegFrequency, c.rightLegAmplitude)
             elif (jointName == "LeftLeg_LeftLowerLeg" or jointName == "RightLeg_RightLowerLeg"):
                 self.motors[jointName] = MOTOR(jointName, c.defaultOffset, c.rightLegFrequency, c.lowerLegAmp)               
