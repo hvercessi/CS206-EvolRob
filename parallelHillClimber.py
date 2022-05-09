@@ -19,7 +19,7 @@ class PARALLEL_HILL_CLIMBER:
             os.system("del brain*.nndf")
         
         self.nextAvailableID = 0
-        self.currGen=0
+        self.currGen=17
         self.parents = {}
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID,self.currGen)
@@ -75,6 +75,9 @@ class PARALLEL_HILL_CLIMBER:
         print("\n*********************************************\n")
         print("\n             Best Fitness: "+ str(best))
         print("\n*********************************************\n")
+        f = open('BestWeightsB.txt', 'w')
+        f.write(str(self.parents[keyBest].gen)+"|"+str(best)+"|"+str(self.parents[keyBest].weights)+"\n")
+        f.close()
         self.parents[keyBest].Start_Simulation("GUI")
         
     
@@ -116,7 +119,7 @@ class PARALLEL_HILL_CLIMBER:
         
         for currentGeneration in range(c.numberOfGenerations): 
             self.currGen = currentGeneration
-            print("\n        Generation: " + str(currentGeneration+1)+"\n")
+            print("\n        Generation: " + str(currentGeneration)+"\n")
             self.Evolve_For_One_Generation()
              
         

@@ -12,11 +12,14 @@ import numpy
 class SOLUTION:
     
     def __init__(self):
-        self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
+        #self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
         
         #print(self.weights)
-        self.weights = self.weights*2 - 1
+        #self.weights = self.weights*2 - 1
         #print(self.weights)
+        self.weightss = [[-0.08696301, 0.72215503, -0.44714719,  0.40411209,  0.37823951,  0.72088206,-0.93834849,  0.55772926, -0.40848454, -0.63702012],
+                         [-0.37415609,  0.5388035,   0.33341815,  0.39668953, -0.68249043, -0.97343239, 0.05439511,  0.43359847,  0.28848266,  0.33807416],
+                         [-0.7986885,   0.01266272,  0.12052758,  0.36727074, -0.30721712,  0.47955047, 0.56591569, -0.62221604,  0.86269036,  0.8630572 ]]
     
     def __init__(self, iD,gen):
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)

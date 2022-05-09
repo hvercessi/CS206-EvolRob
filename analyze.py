@@ -32,7 +32,7 @@ generationsA = np.array(generationsA)
 fitValuesA = np.array(fitValuesA)
 #scatter = plt.scatter(fitValues, generations, label="Fitness Values")
 #plt.plot(positionValuesFront, label="Front Leg Target Angles", linewidth=1)
-mA, bA = np.polyfit(generationsA, fitValuesA, 1)
+coeffsA = np.polyfit(generationsA, fitValuesA, 4)
 
 fitValuesB = []
 #zValues = []
@@ -54,15 +54,24 @@ generationsB = np.array(generationsB)
 fitValuesB = np.array(fitValuesB)
 #scatter = plt.scatter(fitValues, generations, label="Fitness Values")
 #plt.plot(positionValuesFront, label="Front Leg Target Angles", linewidth=1)
-mB, bB = np.polyfit(generationsB, fitValuesB, 1)
+coeffsB = np.polyfit(generationsB, fitValuesB, 4)
+
+polyB = np.poly1d(coeffsB)
+new_xB = np.linspace(np.amin(generationsB), np.amax(generationsB))
+new_yB = polyB(new_xB)
+
+polyA = np.poly1d(coeffsA)
+new_xA = np.linspace(np.amin(generationsA), np.amax(generationsA))
+new_yA = polyA(new_xA)
+
 
 fig, ax = plt.subplots()
 
 scatterA, = ax.plot(generationsA, fitValuesA, 'o', label = "A")
-lineA, = ax.plot(generationsA, mA*generationsA + bA, label = "Fit Line A")
+lineA, = ax.plot(new_xA, new_xB, label = "Fit Line A") #ax.plot(generationsA, mA*generationsA + bA, label = "Fit Line A")
 
 scatterB, = ax.plot(generationsB, fitValuesB, 'x', label = "B")
-lineB, = ax.plot(generationsB, mB*generationsB + bB, label = "Fit Line B")
+lineB, = ax.plot(new_xB, new_yB, label = "Fit Line B")  #ax.plot(generationsB, mB*generationsB + bB, label = "Fit Line B")
 
 first_legend = ax.legend(handles=[lineA], loc='upper right')
 sec_legend = ax.legend(handles=[lineB], loc='upper left')
