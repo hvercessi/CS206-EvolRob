@@ -18,7 +18,12 @@ class ROBOT:
     def __init__(self, solutionID):
         self.motors = {}
         self.sensors = {}
-        self.robotId = p.loadURDF("body.urdf")
+        
+        try:
+            self.robotId = p.loadURDF("body.urdf")
+        except IOError:
+            print("\n IOERROR \n")
+        
         self.solutionID = solutionID
         self.fitnessList = []
         self.nn = NEURAL_NETWORK("brain" + str(self.solutionID) + ".nndf")
@@ -33,11 +38,21 @@ class ROBOT:
     def Prepare_To_Act(self):
         self.motors = {}
         for jointName in pyrosim.jointNamesToIndices:
-            self.motors[jointName] = MOTOR(jointName)
+            if (jointName == "Hips_LeftLeg" or jointName == "RightShoulder_RightUpperArm"):
+                self.motors[jointName] = MOTOR(jointName, c.leftLegPhaseOffset, c.leftLegFrequency, c.leftLegAmplitude)
+            elif (jointName == "Hips_RightLeg" or jointName == "LeftShoulder_LeftUpperArm"):
+                self.motors[jointName] = MOTOR(jointName, c.rightLegPhaseOffset, c.rightLegFrequency, c.rightLegAmplitude)
+            elif (jointName == "LeftLeg_LeftLowerLeg" or jointName == "RightLeg_RightLowerLeg"):
+                self.motors[jointName] = MOTOR(jointName, c.defaultOffset, c.rightLegFrequency, c.lowerLegAmp)               
+            else:
+                self.motors[jointName] = MOTOR(jointName, c.defaultOffset, c.defaultFreq, c.defaultAmp)
+            
             
     def Sense(self, i):
         for name in self.sensors:
             self.sensors[name].Get_Value(i)
+            # if name == 1:
+            #self.sensors[name].values.append(numpy.sin(pyrosim.Get_Touch_Sensor_Value_For_Link(self.sensors[name].linkName)))
             
     def Act(self, i):
         for neuronName in self.nn.Get_Neuron_Names():

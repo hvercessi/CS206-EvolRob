@@ -8,6 +8,7 @@ import constants as c
 import pybullet_data
 import numpy
 import os
+import time
 
 class SIMULATION:
 
@@ -34,7 +35,15 @@ class SIMULATION:
         self.gen = gen
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0,0,-9.8)
+        
+        while not os.path.exists("world.sdf"):
+          time.sleep(0.01)
+        
         self.world = WORLD()
+        
+        while not os.path.exists("body.urdf"):
+          time.sleep(0.01)
+        
         self.robot = ROBOT(solutionID)
         pyrosim.Prepare_To_Simulate((self.robot).robotId)
         (self.robot).Prepare_To_Sense()

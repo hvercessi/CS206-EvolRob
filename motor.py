@@ -5,11 +5,14 @@ import simulation as s
 import numpy
 
 class MOTOR:
-    def __init__(self, name):
+    def __init__(self, name, offset, freq, amp):
         
         self.jointName = name
         self.motorValues = []
         #self.Prepare_To_Act()
+        self.offset = offset
+        self.frequency = freq
+        self.amplitude = amp
         
     # def Prepare_To_Act(self):
     #     self.amplitude = (numpy.pi/4.0)
@@ -24,12 +27,13 @@ class MOTOR:
     #                                c.xValsMin, c.xValsMax, c.simRange) + self.offset)
         
     def Set_Value(self, robot, desiredAngle):
+        self.angleValue = self.amplitude*numpy.sin(self.frequency*desiredAngle + self.offset) 
         self.motorValues.append( \
                            pyrosim.Set_Motor_For_Joint(bodyIndex = robot.robotId, \
                                                        jointName = self.jointName, \
                                                        controlMode = p.POSITION_CONTROL, \
-                                                       targetPosition = desiredAngle, \
-                                                       maxForce = 600) )
+                                                       targetPosition = self.angleValue, \
+                                                       maxForce = 400) )
     def Get_Value(self):
         pass
     def Save_Values(self):

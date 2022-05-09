@@ -114,7 +114,7 @@ class PARALLEL_HILL_CLIMBER:
         
         for currentGeneration in range(c.numberOfGenerations): 
             self.currGen = currentGeneration
-            print("\n        Generation: " + str(currentGeneration)+"\n")
+            print("\n        Generation: " + str(currentGeneration+1)+"\n")
             self.Evolve_For_One_Generation()
              
         
