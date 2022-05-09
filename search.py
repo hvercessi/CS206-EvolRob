@@ -18,5 +18,5 @@ phc.Evolve()
 phc.Show_Best()
 os.system("python analyze.py")
 os.system("del fitness*.txt")
-os.system("del SolutionFitness.txt")
+#os.system("del SolutionFitnessB.txt")
 
