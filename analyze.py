@@ -56,10 +56,20 @@ fitValuesB = np.array(fitValuesB)
 #matplotlib.pyplot.plot(positionValuesFront, label="Front Leg Target Angles", linewidth=1)
 mB, bB = np.polyfit(generationsB, fitValuesB, 1)
 
-matplotlib.pyplot.plot(generationsA, fitValuesA, 'o')
-matplotlib.pyplot.plot(generationsA, mA*generationsA + bA)
-matplotlib.pyplot.plot(generationsB, fitValuesB, 'x')
-matplotlib.pyplot.plot(generationsB, mB*generationsB + bB)
+fig, ax = matplotlib.pyplot.subplots()
+
+scatterA, = ax.plot(generationsA, fitValuesA, 'o', label = "A")
+lineA, = ax.plot(generationsA, mA*generationsA + bA, label = "Fit Line A")
+
+scatterB, = ax.plot(generationsB, fitValuesB, 'x', label = "B")
+lineB, = ax.plot(generationsB, mB*generationsB + bB, label = "Fit Line B")
+
+first_legend = ax.legend(handles=[lineA], loc='upper right')
+sec_legend = ax.legend(handles=[lineB], loc='upper left')
+third_legend = ax.legend([(scatterA, scatterB)])
+
+ax.legend([scatterA, scatterB, lineA, lineB], ["A", "B", "Fit Line A", "Fit Line B"])
+
 matplotlib.pyplot.xlabel("Generation")
 matplotlib.pyplot.ylabel("Fitness")
 matplotlib.pyplot.title("Fitness after 15 Generations")
