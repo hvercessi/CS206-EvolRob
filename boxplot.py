@@ -79,7 +79,7 @@ Bq4 = "   Q4 Quantile: "+str(np.quantile(fitValuesB, 1.0))
 Bavg = "   Average Fitness: " + str(np.around(np.mean(fitValuesB), 3))
 
 data = [fitValuesA, fitValuesB]
-# ax.boxplot(data)
+ax.boxplot(data)
 
 print("\n   Test A (no arms) Summary:\n" +Aq1 +"\n")
 print(Aq2 +"\n")
@@ -92,11 +92,12 @@ print(Bq2 +"\n")
 print(Bq3 +"\n")
 print(Bq4 +"\n")
 print(Bavg +"\n")
-# ax.set_xticklabels(["A", "B"])
-# plt.xlabel("Test Group")
-# plt.ylabel("Fitness")
-# plt.title("Fitness after 15 Generations")
-# plt.show()
+
+ax.set_xticklabels(["A (no arms)", "B (arms)"])
+plt.xlabel("Test Group")
+plt.ylabel("Fitness")
+plt.title("Fitness after 25 Generations")
+plt.show()
 
 #plt.text(2, 2, q1, fontsize = 10, color = 'g')
-#plt.show()
+plt.show()
