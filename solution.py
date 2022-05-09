@@ -215,6 +215,6 @@ class SOLUTION:
     
     def Save_Values(self):
         #self.fitnessList = [self.gen, self.xPosition, self.zPosition]
-        f = open('SolutionFitness.txt', 'a')
+        f = open('SolutionFitnessA.txt', 'a')
         f.write(str(self.gen)+"|"+str(self.fitness)+"\n")
         f.close()

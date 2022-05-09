@@ -16,7 +16,7 @@ fitValues = []
 #zValues = []
 generations = []  
 #colors = ListedColormap(['red', 'blue', 'purple','green', 'yellow', 'orange', 'pink']) 
-with open("SolutionFitness.txt", 'r') as f:
+with open("SolutionFitnessA.txt", 'r') as f:
     line = f.readline()
     while line != "":
         
