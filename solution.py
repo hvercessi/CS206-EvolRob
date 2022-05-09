@@ -94,7 +94,7 @@ class SOLUTION:
       # Shoulders
       pyrosim.Send_Joint( name = "Torso_Shoulders" , parent= "Torso" , child = "Shoulders",\
                          type = "revolute", position = [0.0,0.0,1.0], jointAxis = "0 0 1", upperLimit = 0.0, lowerLimit = 0.0)
-      pyrosim.Send_Cube(name="Shoulders", pos=[0.0,0.0,0.125] , size=[0.55,2.0,0.25])
+      pyrosim.Send_Cube(name="Shoulders", pos=[0.0,0.0,0.125] , size=[0.5,2.0,0.25])
       
       # pyrosim.Send_Joint( name = "Torso_RightShoulder" , parent= "Torso" , child = "RightShoulder",\
       #                    type = "revolute", position = [0.0,0.0,0.625], jointAxis = "0 0 1", upperLimit = 0.0, lowerLimit = 0.0)
@@ -102,12 +102,12 @@ class SOLUTION:
       
       # Left Upper Arm
       pyrosim.Send_Joint( name = "Shoulders_LeftUpperArm" , parent= "Shoulders" , child = "LeftUpperArm",\
-                         type = "revolute", position = [0.0,-1.0,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/8.0, lowerLimit = -numpy.pi/8.0)
+                         type = "revolute", position = [0.0,-0.95,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/8.0, lowerLimit = -numpy.pi/8.0)
       pyrosim.Send_Cube(name="LeftUpperArm", pos=[0.0,0.0,-0.5] , size=[0.35,0.35,1.0], mass=2.0)
       
       # Right Upper Arm
       pyrosim.Send_Joint( name = "Shoulders_RightUpperArm" , parent= "Shoulders" , child = "RightUpperArm",\
-                         type = "revolute", position = [0.0,1.0,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/8.0, lowerLimit = -numpy.pi/8.0)
+                         type = "revolute", position = [0.0,0.95,0.125], jointAxis = "1 1 0", upperLimit = numpy.pi/8.0, lowerLimit = -numpy.pi/8.0)
       pyrosim.Send_Cube(name="RightUpperArm", pos=[0.0,0.0,-0.5] , size=[0.35,0.35,1.0], mass=2.0)
       
       # Left Lower Arm

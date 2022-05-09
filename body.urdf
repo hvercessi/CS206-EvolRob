@@ -240,7 +240,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.125" rpy="0 0 0"/>
             <geometry>
-                <box size="0.55 2.0 0.25" />
+                <box size="0.5 2.0 0.25" />
             </geometry>
             <material name="Cyan">
                 <color rgba="0 1.0 1.0 1.0"/>
@@ -249,14 +249,14 @@
         <collision>
             <origin xyz="0.0 0.0 0.125" rpy="0 0 0"/>
             <geometry>
-                <box size="0.55 2.0 0.25" />
+                <box size="0.5 2.0 0.25" />
             </geometry>
         </collision>
     </link>
     <joint name="Shoulders_LeftUpperArm" type="revolute">
        <parent link="Shoulders"/>
        <child  link="LeftUpperArm"/>
-       <origin rpy="0 0 0" xyz="0.0 -1.0 0.125" />
+       <origin rpy="0 0 0" xyz="0.0 -0.95 0.125" />
      <axis xyz="1 1 0"/>
        <limit effort="0.0" lower="-0.39269908169872414" upper="0.39269908169872414" velocity="0.0"/>
     </joint>
@@ -285,7 +285,7 @@
     <joint name="Shoulders_RightUpperArm" type="revolute">
        <parent link="Shoulders"/>
        <child  link="RightUpperArm"/>
-       <origin rpy="0 0 0" xyz="0.0 1.0 0.125" />
+       <origin rpy="0 0 0" xyz="0.0 0.95 0.125" />
      <axis xyz="1 1 0"/>
        <limit effort="0.0" lower="-0.39269908169872414" upper="0.39269908169872414" velocity="0.0"/>
     </joint>
