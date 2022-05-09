@@ -26,13 +26,6 @@ with open("SolutionFitnessA.txt", 'r') as f:
         fitValuesA.append(float(fitnessValueA[1]))
         
         line = f.readline()
-#plt.plot(backLegSensorValues, label="Back Leg", linewidth=5)
-#plt.plot(frontLegSensorValues, label="Front Leg", linewidth=2)
-generationsA = np.array(generationsA)
-fitValuesA = np.array(fitValuesA)
-#scatter = plt.scatter(fitValues, generations, label="Fitness Values")
-#plt.plot(positionValuesFront, label="Front Leg Target Angles", linewidth=1)
-mA, bA = np.polyfit(generationsA, fitValuesA, 1)
 
 fitValuesB = []
 #zValues = []
@@ -48,29 +41,35 @@ with open("SolutionFitnessB.txt", 'r') as f:
         fitValuesB.append(float(fitnessValueB[1]))
         
         line = f.readline()
-#plt.plot(backLegSensorValues, label="Back Leg", linewidth=5)
-#plt.plot(frontLegSensorValues, label="Front Leg", linewidth=2)
+
 generationsB = np.array(generationsB)
 fitValuesB = np.array(fitValuesB)
-#scatter = plt.scatter(fitValues, generations, label="Fitness Values")
-#plt.plot(positionValuesFront, label="Front Leg Target Angles", linewidth=1)
-mB, bB = np.polyfit(generationsB, fitValuesB, 1)
+
+generationsA = np.array(generationsA)
+fitValuesA = np.array(fitValuesA)
+
+# mA, bA = np.polyfit(generationsA, fitValuesA, 1)
+
+# mB, bB = np.polyfit(generationsB, fitValuesB, 1)
 
 fig, ax = plt.subplots()
 
-scatterA, = ax.plot(generationsA, fitValuesA, 'o', label = "A")
-lineA, = ax.plot(generationsA, mA*generationsA + bA, label = "Fit Line A")
+# scatterA, = ax.plot(generationsA, fitValuesA, 'o', label = "A")
+# lineA, = ax.plot(generationsA, mA*generationsA + bA, label = "Fit Line A")
 
-scatterB, = ax.plot(generationsB, fitValuesB, 'x', label = "B")
-lineB, = ax.plot(generationsB, mB*generationsB + bB, label = "Fit Line B")
+# scatterB, = ax.plot(generationsB, fitValuesB, 'x', label = "B")
+# lineB, = ax.plot(generationsB, mB*generationsB + bB, label = "Fit Line B")
 
-first_legend = ax.legend(handles=[lineA], loc='upper right')
-sec_legend = ax.legend(handles=[lineB], loc='upper left')
-third_legend = ax.legend([(scatterA, scatterB)])
+# first_legend = ax.legend(handles=[lineA], loc='upper right')
+# sec_legend = ax.legend(handles=[lineB], loc='upper left')
+# third_legend = ax.legend([(scatterA, scatterB)])
 
-ax.legend([scatterA, scatterB, lineA, lineB], ["A", "B", "Fit Line A", "Fit Line B"])
+# ax.legend([scatterA, scatterB, lineA, lineB], ["A", "B", "Fit Line A", "Fit Line B"])
+data = [fitValuesA, fitValuesB]
+ax.boxplot(data)
 
-plt.xlabel("Generation")
+ax.set_xticklabels(["A", "B"])
+plt.xlabel("Test Group")
 plt.ylabel("Fitness")
 plt.title("Fitness after 15 Generations")
 plt.show()
